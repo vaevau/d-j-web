@@ -1,0 +1,108 @@
+body, ul, li {
+  padding: 0;
+  margin: 0; }
+
+li, a {
+  list-style: none;
+  text-decoration: none; }
+
+img, input {
+  border: none;
+  outline: none; }
+
+body {
+  background: #E3E4E5; }
+
+#banner {
+  height: 60px;
+  width: 900px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center; }
+  #banner ul {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    font-size: 14px;
+    font-family: ' Microsoft YaHei,Heiti SC,sans-serif';
+    color: #999999; }
+  #banner a {
+    color: #999999; }
+  #banner a:hover {
+    color: red; }
+  #banner .icofont {
+    width: 16px;
+    height: 16px;
+    background: url(../img/ico-landmark.png) no-repeat 0 2px;
+    padding-bottom: 2px;
+    background-size: 100%; }
+
+.banner-r .resign {
+  width: 25px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  padding-left: 0; }
+.banner-r li {
+  margin-left: 8px; }
+.banner-r .spacer {
+  width: 1px;
+  height: 12px;
+  background: #ccc;
+  margin: 5px 0 5px 6px;
+  overflow: hidden; }
+.banner-r .ico-arrow-down {
+  width: 10px;
+  height: 10px;
+  display: inline-block;
+  line-height: 16px;
+  background: url(../img/ico-arrow-down.png) no-repeat 0 5px;
+  padding-bottom: 3px;
+  background-size: 100%; }
+
+.regional-list-hide {
+  width: 70%;
+  margin: 0 auto; }
+  .regional-list-hide .regional-list-container {
+    width: 290px;
+    border: 1px solid #cccc;
+    background: #fff;
+    box-shadow: 1px 2px 3px 0 #ccc; }
+
+.regional-list {
+  width: 86%;
+  margin: 0 auto;
+  padding-bottom: 20px; }
+  .regional-list > div {
+    margin-top: 20px;
+    border-bottom: 1px solid #f5f5f5; }
+  .regional-list > div > ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between; }
+  .regional-list a, .regional-list div {
+    color: #999999;
+    font-size: 14px; }
+  .regional-list a:hover {
+    color: red; }
+
+.CN-list li {
+  padding: 0 8px 16px 6px; }
+
+.GT-list {
+  padding-bottom: 14px; }
+  .GT-list ul {
+    padding-bottom: 14px; }
+  .GT-list li {
+    margin-top: 12px; }
+
+.JD-foreign {
+  border-bottom: none !important; }
+  .JD-foreign ul {
+    margin-left: -50px;
+    border: none; }
+  .JD-foreign li {
+    margin: 12px 0 0 50px; }
+
+/*# sourceMappingURL=index.css.map */
