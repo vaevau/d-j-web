@@ -3,7 +3,7 @@ body, ul, p, li, a, input, button, span, h5 {
   margin: 0; }
 
 body {
-  background: #E3E4E5; }
+  background: #f4f4f4; }
 
 li, a {
   list-style: none;
@@ -488,14 +488,107 @@ html {
 
 #main {
   width: 100rem;
-  border: 1px solid red; }
+  margin: 1rem auto;
+  display: flex;
+  justify-content: space-between; }
   #main .main-l {
     width: 20%;
-    border: 1px solid red; }
+    position: relative; }
   #main .main-m {
-    width: 50%;
-    border: 1px solid #4dce53; }
+    width: 60%; }
   #main .main-r {
-    border: 1px solid greenyellow; }
+    width: 20%; }
+
+.main-l .goods-cate {
+  margin: 0 auto;
+  background-color: #fefefe; }
+.main-l .cate-lk li {
+  border-radius: 0.05rem;
+  padding: .9rem 1rem; }
+.main-l .cate-lk li:hover {
+  background: #e0dfdf; }
+.main-l a {
+  color: #636363;
+  font-size: 1.4rem;
+  font-family: Heiti SC; }
+.main-l a:hover {
+  color: #c81623; }
+.main-l .cate-ls {
+  width: 80rem;
+  height: 59rem;
+  position: absolute;
+  box-shadow: .1rem .2rem .4rem  #333;
+  top: 0;
+  left: 20rem; }
+.main-l .cate-item {
+  display: flex;
+  justify-content: space-between;
+  position: absolute;
+  width: 96%;
+  height: 96%;
+  top: 1.6rem;
+  left: 1.6rem; }
+.main-l .cate-l {
+  width: 74%; }
+.main-l .cate-r {
+  width: 24%; }
+
+.cate-l .cate-detail {
+  margin-top: 1.2rem; }
+.cate-l .fa-angle-right {
+  font-size: 1.4rem;
+  padding-left: .4rem; }
+.cate-l dl {
+  position: relative;
+  margin: 1.6rem 0 0 -1rem;
+  display: flex; }
+.cate-l dt {
+  width: 12%;
+  font-size: 1.3rem;
+  text-align: right;
+  margin-top: .6rem; }
+.cate-l dd {
+  width: 86%;
+  margin-left: .8rem; }
+.cate-l dd a {
+  display: inline-block;
+  font-size: 1.2rem;
+  margin: 1rem 0 0 1.2rem;
+  color: #666;
+  font-family: Heiti SC; }
+
+.cate-top-title {
+  display: flex;
+  justify-content: space-between; }
+  .cate-top-title a {
+    display: inline-block;
+    font-size: 1.2rem;
+    text-align: center;
+    background-color: #333;
+    color: #fefefe;
+    padding: .3rem .9rem; }
+  .cate-top-title a:hover {
+    background-color: #c81623;
+    color: #fefefe; }
+
+.cate-r .relate-imgs {
+  width: 98%;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between; }
+.cate-r .relate-imgs li {
+  width: 8.6rem;
+  height: 3.4rem;
+  margin-top: .4rem; }
+.cate-r .relate-imgs img {
+  width: 100%;
+  height: 100%; }
+.cate-r div {
+  width: 98%;
+  margin: .8rem auto; }
+.cate-r div img {
+  width: 100%;
+  height: 100%; }
 
 /*# sourceMappingURL=index.css.map */
