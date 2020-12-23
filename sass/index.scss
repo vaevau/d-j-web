@@ -1,4 +1,4 @@
-body,ul,p,li,a,input,button,span,h5 {
+body,ul,p,li,a,input,button,span,h5{
     padding: 0;
     margin: 0;
 }
@@ -663,23 +663,28 @@ html {
 }
 
     .cate-ls {
+    display: none;
+    }
+
+    .cate-item-ls {
         width: 80rem;
-        height: 59rem;
+        height: 68rem;
         position: absolute;
         // display: none;
         box-shadow: .1rem .2rem .4rem  #333;
         top: 0;
         left: 20rem;
+        background-color: #fefefe;
     }
-
     .cate-item {
         display: flex;
-        justify-content: space-between;
-        position: absolute;
+        justify-content: space-between;        
         width: 96%;
         height: 96%;
         top: 1.6rem;
-        left: 1.6rem;      
+        left: 1.6rem; 
+        position: absolute;
+        display: none;
     }
     .cate-l {
         width: 74%;

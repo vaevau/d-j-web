@@ -514,20 +514,24 @@ html {
 .main-l a:hover {
   color: #c81623; }
 .main-l .cate-ls {
+  display: none; }
+.main-l .cate-item-ls {
   width: 80rem;
-  height: 59rem;
+  height: 68rem;
   position: absolute;
   box-shadow: .1rem .2rem .4rem  #333;
   top: 0;
-  left: 20rem; }
+  left: 20rem;
+  background-color: #fefefe; }
 .main-l .cate-item {
   display: flex;
   justify-content: space-between;
-  position: absolute;
   width: 96%;
   height: 96%;
   top: 1.6rem;
-  left: 1.6rem; }
+  left: 1.6rem;
+  position: absolute;
+  display: none; }
 .main-l .cate-l {
   width: 74%; }
 .main-l .cate-r {
