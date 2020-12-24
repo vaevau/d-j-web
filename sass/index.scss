@@ -126,7 +126,7 @@ html {
        background: #fff;
        box-shadow: 0px 3px 3px 0 #ccc;
        z-index: 1;
-       display: none;
+    //    display: none;
         
    }
    > div {
@@ -633,10 +633,12 @@ html {
         position: relative;
     }
     .main-m {
-        width: 60%;     
+        width: 60%;  
+        // border: 1px solid red;   
     }
     .main-r {
         width: 20%;
+        background-color: #fff;
     }
 }
 
@@ -644,18 +646,24 @@ html {
     .goods-cate {
         margin:  0 auto;
         background-color: #fefefe;
+        padding-bottom: 1rem;
     }
+    .cate-lk  {
+        padding: .5rem 0;
+    }
+
     .cate-lk li {
         border-radius: 0.05rem;
-        padding: .9rem 1rem;
+        height: 2.5rem;
+        line-height: 2.5rem;
+        padding: 0rem 1rem;
     }
     .cate-lk li:hover {
         background: #e0dfdf;
-    }
-    
+    }   
    a {
        color: #636363;
-       font-size: 1.4rem;
+       font-size: 1.38rem;
        font-family:Heiti SC;
    }
    a:hover {
@@ -773,18 +781,268 @@ html {
 
 }
 
- 
    
-  
-  
- 
+  //轮播图
+  .main-m {
+     .banner {
+        width: 58rem;
+        height: 47rem;
+         margin:  0 auto;
+         position: relative;
+         overflow: hidden;
+     }
+     .banner ul{
+        display: flex;
+    }
+    .img-ls {
+       position: absolute;
+       left: -58rem;
+    }
+    .img-ls li{
+        width: 58rem;
+        height: 47rem;
+    }
+    img {
+        width: 100%;
+        height: 100%;
+    }
+    .dot-ls {
+        position: absolute;
+        left: 1rem;
+        bottom: 1.8rem;
+    }
+    .dot-ls li {
+        margin-left: .8rem;
+        cursor: pointer;
+        width: 1.2rem;
+        height: 1.2rem;
+        border-radius: 50%;
+        background-color: rgba(255, 255, 255, 0.4);
+        transition: all .2s ease-in-out; 
+        -webkit-transition: all .2s ease-in-out;
+        -moz-transition: all .2s ease-in-out;
+        -o-transition:all .2s ease-in-out;
+    }
+    .dot-ls li:hover {
+        background-color: #fff;
+        box-shadow: 0 0 .2rem .3rem rgba(44, 43, 43,0.4);
+    }
+    .prv-next {   
+        position: relative;
+        top: 50%; 
+    }
+    .fa-angle-left, .fa-angle-right {
+        font-size: 1.6rem;
+        background-color: rgba(54, 54, 54, 0.4);
+        opacity: 0.4;
+        color: #fff;
+        padding: .8rem 1.4rem;
+        border-radius: 45%;
+        cursor: pointer;
+        transition: all .4s ease-in-out;
+        -webkit-transition: all .4s ease-in-out;
+        -moz-transition: all .4s ease-in-out;
+        -o-transition:all .4s ease-in-out;
+    }
+    .fa-angle-left:hover, .fa-angle-right:hover {
+        opacity: 0.8;
+    }
+    .prv-next  .prv {
+        position: absolute;
+        left: -1rem; 
+    }
+    .prv-next .next {
+        position: absolute;
+        right: -1rem;  
+    }
+}
  
 
- 
+//main 右边
+.jd-block {
+    width: 96%;
+    margin: 1rem auto;  
+    text-align: left;
+    a {
+        font: 12px/1.5 Microsoft YaHei,Heiti SC,tahoma,sans-serif;
+        color: #666;
+    }
+     a:hover{
+        color: #c81623;     
+    }
+}
+.user {
+    display: flex;
+    justify-content: start;
+    margin-left: 1rem;
+    padding-bottom: 1rem;
+    .avatar {
+        width: 4rem;
+        height: 4rem;
+        border-radius: 50%;
+        border: .2rem solid #fff;
+        box-shadow: 0 2px 8px rgba(0,0,0,.05);
+    }
+    img {
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+    }
+}
+ .user-block, .jd-news-block {
+   border-bottom: 1px solid #ccc;
+   border-image: linear-gradient(to right, #fefefe, rgb(240, 237, 237), #fff)1;
+   padding-bottom: 1rem;
+   margin-left: 1rem;
+ }
+ .user-show {
+     padding-left: 1rem;
+     h5,a {
+        font: 12px/1.5 Microsoft YaHei,Heiti SC,tahoma,sans-serif;
+        margin-top: .2rem;
+     }
+     h5 {  
+        color: #666;
+     }
+     a {
+        color: #333;
+     }
+ }
+ .user-profit-lk {
+    text-align: center;
+    margin-left: -1rem;
+     a {
+        display: inline-block;
+        border-radius: 1.4rem;
+        width: 7rem;
+        height: 2.4rem;
+        line-height: 2.4rem;  
+        transition: all .2s ease-in-out;  
+     }
+     .new-profit {
+        background-color: #e1251b;
+        color: #fff;
+     }
+     .new-profit:hover, .plus-vip:hover  {
+        background-color: #c81623;
+        color: #fff;
+     }
+     .plus-vip {
+         background-color: #363634;
+        color: #e5d790;
+        margin-left: .8rem;
+     }
+
+ }
   
+
+ .jd-news-block {
+     width: 90%;
+     margin:  1rem auto;
+     position: relative;
+        h5 {
+            font: 12px/1.5 Microsoft YaHei,Heiti SC,tahoma,sans-serif;
+            color: #000;
+            font-weight: bold;
+            margin-left: .6rem;
+        }
+        .more-lk {
+           color: #999;
+           position: absolute;
+           right: 1rem;
+           top: 0;
+        }
+        li{
+            height: 2rem;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            margin-top: .4rem;
+            line-height: 2rem;
+        }
+        span {
+            display: inline-block;
+           background-color:rgba(225,37,27,.08);
+           padding:0rem .2rem;
+           margin: .2rem .8rem;
+           height: 2rem;
+           line-height: 2rem;
+           color: #e1251b;
+        }
+ }
  
+
+ .feature-entry{
+    width: 95%;
+    margin: 0 auto;
+    margin-left: -.1rem;
+    position: relative;
+    .feature-lk {
+        display: none;
+    }
+    ul {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        text-align: center;
+    }
+    li {
+        width: 3.8rem;
+        margin: .4rem 0 0 .8rem; 
+        position: relative; 
+    }
+    sup {
+        position:absolute;
+        right: -.4rem;
+        background-color: #e1251b;
+        color: #fff;
+        padding: 0 .1rem 0 .2rem;
+        text-align: center;
+    }
+
+    img:nth-child(1) {  
+       position: absolute;  
+       transition: .4s;
+       opacity: 1;
+    }
+    img:nth-child(1):hover { 
+       opacity: 0;
+     }
+    img {
+        width: 2.8rem;
+        height: 2.8rem;
+    }
+ }
    
-  
+  //快捷入口详细内容
+  .feature-itme {
+     
+      .item-wrapper {
+          width: 95%;
+          display: flex;
+          top: 0;
+          left: 1rem;
+          margin: auto;
+          position: absolute;
+      }
+      .entry-lk li {
+        
+      }
+      .entry-lk li:hover {
+        
+      }
+      .entry-lk a {
+          text-align: center;
+          display: flex;
+          justify-content: center;
+          height: 2.4rem; 
+          width: 2.8rem;      
+      }
+      .entry-lk a:hover {
+        border-bottom: 2px solid #e33333;
+      }
+     
+  }
  
    
 
