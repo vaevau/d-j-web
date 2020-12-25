@@ -4089,26 +4089,33 @@
                             <li><a href="#">话费</a></li>
                             <li><a href="#">机票</a></li>
                             <li><a href="#">酒店</a></li>
-                            <li><a href="#">游戏</a></li>
+                            <li><a href="#" style="display: none;">游戏</a></li>
                         </ul>
                     </div>
                     <div class="entry-detail">
                             <div class="photo-charge">
                                 <div>
-                                    <a href="#">话费充值</a><a href="#">流量充值</a>
-                                    <div class="phone-num">
-                                        <span>号码</span> <input type="text /">
+                                    <a href="#" class="active">话费充值</a><a href="#">流量充值</a>
+                                    <div class="phone-num">                                        
+                                        <label for="photo-num"> 号码
+                                            <input type="text" placeholder="请输入手机号码" name="photo-num" />
+                                        </label>
                                     </div>
                                 </div>
                                 <div class="top-up">
-                                    <div class="ph-top-up">
-                                        <span>面值</span> <input type="text" value="value=100元" />  <i></i> 
+                                    <div class="ph-top-up">  
+                                        <div class="sum-ipt">                
+                                            <label for="charge-sum"> 面值
+                                                <input type="text" placeholder="50元" name="charge-sum" />                                                
+                                            </label>
+                                            <i class="fa fa-angle-down" aria-hidden="true"></i>
+                                        </div> 
                                         <div class="ph-charge-sum">
                                             <ul>
                                                 <li>10元</li>
                                                 <li>20元</li>
                                                 <li>30元</li>
-                                                <li>50元</li>
+                                                <li><i class="fa fa-check" aria-hidden="true"></i>50元</li>
                                                 <li>100元</li>
                                                 <li>200元</li>
                                                 <li>300元</li>
@@ -4116,16 +4123,22 @@
                                             </ul>
                                         </div>  
                                         <p>￥98.0-￥100.0</p>   
-                                        <div>快速充值</div>
+                                        <div class="top-up-btn">快速充值</div>
                                         <h5><a href="#">抢90减40元话费券</a></h5>          
                                     </div>
                                     <div class="traffic-top-up">
-                                        <span>流量</span> <input type="text" value="全国" />  <i></i>  
-                                        <input type="text" value="50M" /> 
+                                        <div class="sum-ipt">
+                                            <label for="">流量
+                                                <input type="text" value="全国" /> 
+                                                <i class="fa fa-angle-down all" aria-hidden="true"></i>
+                                                <input type="text" value="50M" />
+                                                <i class="fa fa-angle-down" aria-hidden="true"></i>
+                                            </label>                                   
+                                        </div>
                                         <div class="traffic-kind">
                                             <ul>
                                                 <li>全国</li>
-                                                <div>省内</div>
+                                                <li>省内</li>
                                             </ul>
                                         </div>
                                         <div class="traffic-sum">
@@ -4138,21 +4151,141 @@
                                             </ul>
                                         </div>  
                                         <p>￥7.5-￥10.0</p>  
+                                        <div class="top-up-btn">快速充值</div>
                                         <a href="#">App Store充值卡</a>         
                                     </div>    
-                                    <div class="close-btn"></div>
+                                    
                                 </div>
-  
                             </div>
-                            <div class="air-ticket"></div>
-                            <div class="hotel"></div>
-                            <div class="game"></div>
-                    </div>
-                </div>
+                            <div class="air-ticket">
+                                <div class="ticket-lk">
+                                    <div class="air-kind">
+                                        <a href="#" class="active">国内机票</a>
+                                        <a href="#">国际/港澳台</a>
+                                        <a href="#">特惠</a>
+                                        <div class="phone-num">                                        
+                                            <label for="">
+                                                <input type="radio"name="" /><span>单程</span>                                                                         
+                                                <input type="radio"name="" /><span>往返</span>
+                                            </label>  
+                                        </div>
+                                    </div>
+                                    <div class="top-up">
+                                        <!-- //国内机票 -->
+                                        <div class="ph-top-up domestic">  
+                                            <div class="sum-ipt">                
+                                                <label for="charge-sum">出发 
+                                                    <input type="text" placeholder="城市" name="charge-sum" />
+                                                    <i class="fa fa-exchange" aria-hidden="true"></i>
+                                                    <span>到达</span>   <input type="text" placeholder="城市" name="charge-sum" />                                                 
+                                                </label>
+                                            </div> 
+                                            <div class="ticket-date">
+                                                <label for="">日期
+                                                    <input type="text" placeholder="出发">
+                                                    <input type="text" placeholder="返程" name="" id="">
+                                                </label>
+                                            </div>                                           
+                                            <div class="top-up-btn">机票查询</div>
+                                            <a href="#">当季热门特惠机票</a>
+                                        </div>   
+                                        <!-- 港澳台机票 -->
+                                        <div class="ph-top-up HK-TW-AM">  
+                                            <div class="sum-ipt">                
+                                                <label for="charge-sum">出发 
+                                                    <input type="text" placeholder="城市" name="charge-sum" />
+                                                 <i class="fa fa-exchange" aria-hidden="true"></i>
+                                                 <span>到达</span>   <input type="text" placeholder="城市" name="charge-sum" />                                                 
+                                                </label>
+                                            </div> 
+                                            <div class="ticket-date">
+                                                <label for="">日期
+                                                    <input type="text" placeholder="出发">
+                                                    <input type="text" placeholder="返程" name="" id="">
+                                                </label>
+                                            </div>                                           
+                                            <div class="top-up-btn">机票查询</div>
+                                            <a href="#">国际机票任性搜</a>
+                                        </div>  
+
+                                        <div class="discount">
+                                            <ul>
+                                                <li><a href=""><img src="img/pic-air1.jpg" alt="" /></a></li>
+                                                <li><a href=""><img src="img/pic-air2.png" alt="" /></a></li>
+                                            </ul>                                                                
+                                        </div>
+                                    </div>                             
+                                </div>
+                                
+                            </div>
+                            <div class="air-ticket">
+                                <div class="ticket-lk">
+                                    <div class="air-kind">                                        
+                                        <a href="#" class="active">国内/港澳台</a>
+                                        <a href="#">促销活动</a>
+                                    </div>
+                                    <div class="top-up hotel">
+                                       
+                                        <div class="ph-top-up domestic">  
+                                            <div class="sum-ipt">                
+                                                <label for="">
+                                                    <span>目的地</span>  <input type="text" placeholder="城市" name="charge-sum" />                                                   
+                                                    <span>到达日期</span> <input type="text" placeholder="2020-12-26" name="charge-sum" />  
+                                                    <span>离开日期</span> <input type="text" placeholder="2020-12-27" name="charge-sum" />   
+                                                    <input type="text" placeholder="商圈/地标/酒店" class="place-name">                                         
+                                                </label>
+                                            </div> 
+                                                                                 
+                                            <div class="top-up-btn"> 酒店查询</div>
+                                            <a href="#">订酒店上京东</a>
+                                        </div>   
+
+                                        <div class="discount" >
+                                            <ul>
+                                                <li><a href=""><img src="img/pic-air1.jpg" alt="" /></a></li>
+                                                <li><a href=""><img src="img/pic-air2.png" alt="" /></a></li>
+                                            </ul>                                                                
+                                        </div>
+                                    </div>                             
+                                </div> 
+                            </div>
+                            <div class="air-ticket" style="display: block;">
+                                <div class="ticket-lk">
+                                    <div class="air-kind">                                        
+                                        <a href="#" class="active">视频/娱乐</a>
+                                        <a href="#">点卡</a>
+                                        <a href="#">QQ</a>
+                                    </div>
+                                    <div class="top-up hotel">
+                                       
+                                        <div class="ph-top-up domestic" style="display: block;">  
+                                            <div class="sum-ipt">                
+                                                <label for="">
+                                                    <span>服务类型</span>  <input type="text" placeholder="类型" name="charge-sum" />                                                   
+                                                    <span>充值时长</span> <input type="text" placeholder="时长" name="charge-sum" />                                                                                                                                              
+                                                </label>
+                                            </div>                                                                                  
+                                            <div class="top-up-btn"> 酒店查询</div>                                            
+                                        </div>   
+
+                                        <div class="discount" style="display: none;">
+                                            <ul>
+                                                <li><a href=""><img src="img/pic-air1.jpg" alt="" /></a></li>
+                                                <li><a href=""><img src="img/pic-air2.png" alt="" /></a></li>
+                                            </ul>                                                                
+                                        </div>
+                                    </div>                             
+                                </div> 
+                            </div>
+                           
+                            <div class="game"></div>                    
+                    </div>                    
+                    <div class="close-btn"><i class="fa fa-times" aria-hidden="true"></i></div>
+                </div>              
                 </div>
             </div>
         </div>
-        </div>
+     </div>
     </main>
 </body>
 </html>

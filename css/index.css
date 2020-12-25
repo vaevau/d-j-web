@@ -1,3 +1,4 @@
+@charset "UTF-8";
 body, ul, p, li, a, input, button, span, h5 {
   padding: 0;
   margin: 0; }
@@ -11,8 +12,7 @@ li, a {
   font-family: 'Microsoft YaHei',tahoma,arial,Hiragino Sans GB,"\5B8B\4F53",sans-serif; }
 
 img, input, button {
-  border: none;
-  outline: none; }
+  border: none; }
 
 * {
   box-sizing: border-box; }
@@ -759,15 +759,15 @@ html {
   position: relative; }
   .feature-entry .feature-lk {
     display: none; }
-  .feature-entry ul {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    text-align: center; }
-  .feature-entry li {
-    width: 3.8rem;
-    margin: .4rem 0 0 .8rem;
-    position: relative; }
+    .feature-entry .feature-lk ul {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      text-align: center; }
+    .feature-entry .feature-lk li {
+      width: 3.8rem;
+      margin: .4rem 0 0 .8rem;
+      position: relative; }
   .feature-entry sup {
     position: absolute;
     right: -.4rem;
@@ -775,13 +775,15 @@ html {
     color: #fff;
     padding: 0 .1rem 0 .2rem;
     text-align: center; }
-  .feature-entry img:nth-child(1) {
+  .feature-entry .feature-lk img:nth-child(1) {
     position: absolute;
     transition: .4s;
+    -webkit-transition: .4rem;
+    -moz-transition: .4rem;
     opacity: 1; }
-  .feature-entry img:nth-child(1):hover {
+  .feature-entry .feature-lk img:nth-child(1):hover {
     opacity: 0; }
-  .feature-entry img {
+  .feature-entry .feature-lk img {
     width: 2.8rem;
     height: 2.8rem; }
 
@@ -792,6 +794,27 @@ html {
   left: 1rem;
   margin: auto;
   position: absolute; }
+  .feature-itme .item-wrapper .close-btn {
+    position: absolute;
+    top: 20rem;
+    left: 8rem;
+    font-size: 1.4rem;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 2rem;
+    color: #949090; }
+  .feature-itme .item-wrapper .close-btn:hover {
+    background-color: #e1251b;
+    color: #fff; }
+.feature-itme .entry-lk ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between; }
+.feature-itme .entry-lk li {
+  width: 3.8rem;
+  margin: -.4rem 0 0 .8rem; }
 .feature-itme .entry-lk a {
   text-align: center;
   display: flex;
@@ -800,5 +823,186 @@ html {
   width: 2.8rem; }
 .feature-itme .entry-lk a:hover {
   border-bottom: 2px solid #e33333; }
+.feature-itme .entry-detail {
+  width: 100%;
+  position: absolute;
+  top: 2.6rem; }
+
+.entry-detail a {
+  font-size: 1.3rem;
+  margin-left: 1rem; }
+.entry-detail .active {
+  color: #f10214; }
+.entry-detail .phone-num {
+  display: flex;
+  justify-content: space-around;
+  margin-left: 1rem;
+  margin-top: 1rem; }
+.entry-detail label {
+  font-size: 1.3rem;
+  color: #666666; }
+.entry-detail input {
+  height: 2rem;
+  line-height: 2rem;
+  width: 74%;
+  padding: 0 .4rem;
+  margin-left: .8rem;
+  font-size: 1.2rem;
+  border: 1px solid #e7e7e7; }
+
+.photo-charge {
+  display: none; }
+
+.top-up a {
+  color: #6690eb;
+  margin-top: .6rem;
+  display: inline-block; }
+.top-up .top-up-btn {
+  width: 6rem;
+  height: 2.2rem;
+  background-color: #f10214;
+  color: #fff;
+  text-align: center;
+  line-height: 2.2rem;
+  border-radius: 1.4rem;
+  font-size: 1.1rem;
+  margin: .4rem 0 0 1rem; }
+.top-up p {
+  color: #f10214;
+  font-size: 1.2rem;
+  margin: .4rem 0 0 .8rem; }
+.top-up .ph-top-up {
+  position: absolute; }
+.top-up .sum-ipt {
+  margin: 1rem 0 0 1rem; }
+.top-up .sum-ipt .fa-angle-down {
+  position: absolute;
+  right: 1rem;
+  line-height: 2rem; }
+.top-up .ph-charge-sum {
+  display: none; }
+.top-up .ph-charge-sum, .top-up .traffic-kind,
+.top-up .traffic-sum {
+  width: 60%;
+  margin-top: -1rem;
+  left: 5rem;
+  position: absolute; }
+.top-up .ph-charge-sum ul, .top-up .traffic-kind ul,
+.top-up .traffic-sum {
+  background-color: #818080;
+  padding: .4rem 0;
+  border-radius: .4rem; }
+.top-up .ph-charge-sum li, .top-up .traffic-kind li,
+.top-up .traffic-sum li {
+  height: 1.6rem;
+  width: 100%;
+  line-height: 1.6rem;
+  padding-left: 1.8rem;
+  color: #fff;
+  font-size: 1.2rem;
+  font-family: '微软雅黑';
+  position: relative; }
+.top-up .fa-check {
+  position: absolute;
+  left: .4rem;
+  top: .2rem;
+  font-weight: normal; }
+.top-up .ph-charge-sum li:hover,
+.top-up .traffic-kind li:hover,
+.top-up .traffic-sum li:hover {
+  background: royalblue; }
+.top-up .traffic-kind {
+  width: 40%;
+  margin: -1rem -4rem; }
+.top-up .traffic-top-up .all {
+  position: absolute;
+  left: 9rem; }
+.top-up .traffic-top-up .traffic-sum {
+  width: 44%;
+  margin: -1.4rem 2.8rem; }
+.top-up .traffic-top-up input {
+  width: 34%; }
+
+.air-ticket {
+  width: 100%;
+  margin: 0 auto;
+  display: none; }
+  .air-ticket .air-kind {
+    margin-left: -.4rem; }
+  .air-ticket .air-kind a {
+    font-size: 1.2rem; }
+  .air-ticket .phone-num {
+    margin-left: -4.2rem; }
+    .air-ticket .phone-num label {
+      display: flex;
+      justify-content: center;
+      align-items: center; }
+    .air-ticket .phone-num input {
+      display: inline-block;
+      width: 1.4rem;
+      height: 1.4rem; }
+    .air-ticket .phone-num span {
+      width: 4rem;
+      display: inline-block;
+      padding-left: .6rem; }
+  .air-ticket .top-up .HK-TW-AM a, .air-ticket .top-up .domestic a {
+    font-size: 1.2rem;
+    position: absolute;
+    right: 0;
+    top: 10rem; }
+  .air-ticket .domestic {
+    display: none; }
+  .air-ticket .sum-ipt input {
+    text-align: center;
+    margin-top: .6rem; }
+  .air-ticket .sum-ipt i {
+    position: absolute;
+    transform: rotate(90deg);
+    top: 3rem;
+    right: .2rem;
+    padding: .2rem;
+    border-radius: 50%;
+    border: 1px solid #ccc;
+    color: #9c9b9b;
+    font-size: 1.1rem;
+    cursor: pointer; }
+  .air-ticket .ticket-date {
+    margin: 1rem 1rem; }
+    .air-ticket .ticket-date input {
+      width: 30%;
+      border: 1px solid #ccc;
+      text-align: center;
+      padding: 0;
+      margin-left: .8rem; }
+  .air-ticket .HK-TW-AM {
+    display: none; }
+  .air-ticket .discount {
+    margin: 1rem 0 0 -1rem;
+    display: none; }
+    .air-ticket .discount ul {
+      display: flex; }
+    .air-ticket .discount li {
+      width: 10.4rem;
+      height: 11.6rem; }
+    .air-ticket .discount img {
+      width: 100%;
+      height: 100%; }
+
+.hotel {
+  font-size: 1.2rem;
+  margin-left: -.1rem; }
+  .hotel .domestic {
+    display: none; }
+  .hotel span {
+    width: 5rem;
+    display: inline-block;
+    font-size: 1.1rem; }
+  .hotel input {
+    width: 66%;
+    margin: 0; }
+  .hotel .place-name {
+    width: 100%; }
+  .hotel a {
+    margin-top: 2rem; }
 
 /*# sourceMappingURL=index.css.map */
