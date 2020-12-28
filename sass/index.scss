@@ -1663,7 +1663,7 @@ ins {
         background-color: #fff;
      }
 }
-
+//每日特价
 .lowest-price-l {
     h4 {
         width: 9rem;
@@ -1800,7 +1800,7 @@ ins {
    }
 }
 
-
+// 品牌闪购 
 .optmztn-block-r {
     background-color: #fff;
     .flash-buy-title {        
@@ -1938,4 +1938,107 @@ ins {
         color: #666;
         overflow: hidden;
     }
+}
+
+// 发现好货
+.find-goods-block {
+    display: flex;
+    justify-content: space-between;
+    height: 26rem;
+    margin-top: 2rem;
+    .find-goods-posters {
+        width: 19%;
+        background: #fff url(../img/bg/bg-find-goods.png) no-repeat center/cover;
+        background-size: 100% 100%;
+        cursor: pointer;
+        overflow: hidden;
+    }
+    .find-goods-ls {
+        width: 80%;
+        overflow: hidden;
+        background-color: #fff;
+    }
+}
+
+.find-goods-posters {
+    .find-goods-bg {
+        width: 16rem;
+        height: 9rem;
+        margin: 0 auto;
+        background: url(../img/bg/bg2-find-goods.png) no-repeat center/cover;
+        background-size: 16rem 9rem;
+        text-align: center;
+        vertical-align: middle;
+        display: table;
+        position: relative;
+    }
+    a {
+        position: absolute;
+        left: -2.4rem;
+        top: 5.8rem;
+        width: 20rem;
+        height: 26rem;              
+        color: rgba(255,255,255,.8);
+        font-size: 1.6rem;
+        font-family: 'Microsoft YaHei';
+    }
+    a:hover i {
+        background-color: #e1251b;
+        border: 1px solid #e1251b;
+    }
+    a i {
+        width: 1.6rem;
+        height: 1.6rem;
+        line-height: 1.4rem;
+        font-size: 1.2rem;
+        border-radius: 50%;
+        color: #fff;
+        border: 1px solid #fff;
+        background-color: #000;
+    }
+}
+
+.find-goods-ls {
+
+    ul {     
+        margin: 2rem 0 0 -4.2rem;
+        display: flex;
+        justify-content: space-between;
+    }
+    li {         
+        width: 15rem;
+        margin-left: 5.6rem;
+    }
+    li:nth-child(even)>a {
+        display: block;
+        margin-top: 5rem;
+     }
+     li:nth-child(odd)>a p {
+        margin-top: 1rem;
+     }
+     li:nth-child(even)>a div {
+        margin-top: 1rem;
+     }
+     li div {
+        width: 15rem;
+        height: 15rem; 
+     }
+     li a:hover p {
+         color: #e1251b;
+     }
+    li div img{
+        width: 100%;
+        height: 100%;
+    }
+    li p {
+        width: 15rem;
+        height: 2rem;
+        color: rgb(83, 81, 81);
+        font-size: 1.4rem;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        font-family:'Microsoft YaHei' "\5B8B\4F53";
+    }
+
 }
