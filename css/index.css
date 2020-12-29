@@ -1577,12 +1577,12 @@ ins {
     width: 24.2%;
     background-color: #fff; }
 
-.box h1 {
+.box a h1 {
   padding: 1rem 2rem;
   font-size: 2.4rem;
   color: #333;
   font-weight: normal; }
-.box h1 i {
+.box a h1 i {
   position: absolute;
   margin-top: 1rem;
   margin-left: 1rem;
@@ -1596,7 +1596,7 @@ ins {
   background-color: #fff;
   text-align: center;
   line-height: 1.4rem; }
-.box a:hover i {
+.box a:hover h1 i {
   border: 1px solid #e1251b;
   color: #fff;
   background-color: #e1251b; }
@@ -1736,5 +1736,95 @@ ins {
   font-size: 1.2rem;
   font-family: 'Microsoft Yahei','PingFangSC-Medium',sans-serif,serif;
   overflow: hidden; }
+
+.nice-shop .nice-store {
+  width: 90%;
+  margin: 0 auto; }
+
+.nice-store .store-item {
+  width: 100%;
+  height: 11rem;
+  overflow: hidden; }
+.nice-store .item1 {
+  background: url(../img/bg/bg1-nice-shop.png) no-repeat center/cover; }
+.nice-store .item2 {
+  background: url(../img/bg/bg2-nice-shop.png) no-repeat center/cover;
+  margin-top: .6rem; }
+
+.store-item a {
+  width: 90%;
+  height: 80%;
+  margin: 1rem auto;
+  display: flex;
+  justify-content: space-between; }
+.store-item a:hover h5 {
+  color: #ca1c12; }
+.store-item section h5 {
+  width: 9rem;
+  height: 2.8rem;
+  font-weight: normal;
+  font-size: 1.2rem;
+  color: #666; }
+.store-item section span {
+  display: block;
+  width: 3rem;
+  height: 1.8rem;
+  line-height: 1.6rem;
+  margin-top: 1.4rem;
+  border-radius: .2rem;
+  color: #e2231a;
+  border: 1px solid #e2231a;
+  font-size: 1.2rem;
+  text-align: center; }
+.store-item section p {
+  font-size: 1.2rem;
+  color: #999;
+  margin-top: .6rem; }
+.store-item .store-pic {
+  width: 7.4rem;
+  height: 7.4rem; }
+.store-item .store-pic img {
+  width: 100%;
+  height: 100%; }
+
+.coupon ul {
+  width: 24rem;
+  height: 24rem;
+  background: url(../img/bg/bg-coupon.png) no-repeat center/cover; }
+.coupon li a {
+  width: 18rem;
+  height: 7.2rem;
+  margin: .2rem auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center; }
+.coupon li a:hover .more-coupon span {
+  color: #e1251b; }
+.coupon li .coupon-note {
+  width: 16.4rem;
+  line-height: 1.8rem; }
+.coupon .coupon-note h3 {
+  color: #e33333;
+  font-size: 2rem;
+  font-family: impact,sans-serif; }
+.coupon .coupon-note h3 span {
+  font-size: 1.4rem;
+  color: #ee3333; }
+.coupon .coupon-note span {
+  color: #999; }
+.coupon .coupon-note p {
+  color: #333; }
+.coupon .more-coupon {
+  width: .6rem;
+  position: relative; }
+.coupon .more-coupon span {
+  color: #999;
+  background: no-repeat;
+  font-size: 1.1rem; }
+.coupon .more-coupon i {
+  padding-left: .4rem;
+  position: absolute;
+  top: 3rem;
+  left: 1.4rem; }
 
 /*# sourceMappingURL=index.css.map */
