@@ -2401,3 +2401,137 @@ ins {
         left: 1.4rem;
     }
 }
+
+
+// 频道中心
+.channel-center {
+    margin-top: 3rem;
+    .channel-hd {
+        text-align: center;
+    }
+    .channel-box {
+        margin-top: 2rem;
+    }
+}
+.channel-hd {
+    h1 {   
+        font-size: 2.8rem; 
+        font-family:'Heiti SC', sans-serif;
+        font-weight: 500;
+        color: #333;
+    }
+    h1::before {
+        content: "";
+        width: 2.4rem;
+        height: 2rem;
+        background: url(../img/bg/bg-channel-center.png) no-repeat 0 0/cover;
+        margin-left: -6.4rem;
+        margin-top: .5rem;
+        position: absolute;
+        
+    }
+    h1::after {
+        content: "";
+        width: 2.4rem;
+        height: 2rem;
+        background: url(../img/bg/bg-channel-center.png) no-repeat
+         -2.4rem 0/cover;
+         position: absolute;
+         margin-left: 3.6rem;
+         margin-top: .5rem;
+    }
+}
+.channel-box {
+    .hd-box{    
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-between;
+        height: 32.6rem;
+    }
+    .main-box {
+        margin-top: -1rem;
+    }
+}
+.hd-box {
+    .hd-box-l {     
+        width: 49.3%;       
+    }
+    .hd-box-r {
+        width: 49.3%;
+    }
+}
+
+.hd-box-l {     
+    ul {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 1rem;
+    }
+    li {
+        width: 24rem;
+        height: 30.6rem;
+        background-color: #fff;
+    }
+    a {
+        width: 24rem;
+        height: 30.6rem;
+        display: block;
+    }
+    .big-box1 a {   
+        background: url(../img/bg/bg1-channel.png) no-repeat
+        center/cover;
+    }
+    .big-box2 a {
+        background: url(../img/bg/bg2-channel.png) no-repeat
+        center/cover;
+    }
+}
+
+.channel-item {
+     display: flex;
+     flex-wrap: wrap;
+     justify-content: space-between;
+     li {
+         width: 24rem;
+         height: 14.8rem;
+         background-color: #fff;
+         margin-top: 1rem;
+     }
+     .item-detail {
+         width: 80%;
+         height: 72%;
+         margin:  2.4rem auto;
+         display: flex;
+         flex-flow: column nowrap;
+         justify-content: space-between;
+     }
+     .item-detail .item-hd strong{
+         height: 1.8rem;
+         line-height: 1.8rem;
+         display: inline-block;
+         font-weight: normal;
+        font-size: 1.8rem;
+        color: #333;
+     }
+     .item-detail .item-main {
+         display: flex;
+         justify-content: space-between;
+     }
+     .item-detail .item-hd span{
+       width: 9rem;
+       height: 1.2rem;
+       line-height: 1.2rem;
+        white-space: nowrap;
+       overflow: hidden;
+       text-overflow: ellipsis;
+        display: inline-block;
+        font-size: 1.2rem;
+        margin-left: .6rem;
+        color: #999;
+    }
+    .item-detail .item-main img {
+        width: 7.6rem;
+        width: 7.6rem;
+    }   
+}
+
