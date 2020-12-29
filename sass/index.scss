@@ -2043,14 +2043,16 @@ ins {
 
 }
 
+
+// 新品首发 
 .box-block {
     display: flex;
     justify-content: space-between;
     flex-wrap: nowrap;
     margin-top: 2rem;
     .box {
-        width: 24%;
-       background-color: #fff;
+        width: 24.2%;
+        background-color: #fff;
     }
 }
 .box {
@@ -2135,7 +2137,6 @@ ins {
     } 
     
 }
-
 .box-footer {
     padding-bottom: 1.4rem;
     margin-top: 2rem;
@@ -2177,3 +2178,104 @@ ins {
         font-family: 'Microsoft YaHei';
     }
 }
+
+// 排行榜
+
+.rank-top {
+    .box-nav {
+        width: 92%;
+        margin: 0 auto;     
+    }
+    .rank-top-goods {
+              
+    }   
+}
+
+.box-nav {
+    a {
+        display: inline-block;
+        width: 6.2rem;
+        min-width: 6.8rem;
+        height: 2rem;
+        margin-left: .3rem;
+        line-height: 2rem;        
+        color: #999;
+        font-size: 1.2rem;
+        border-radius: 1.2rem;
+        background-color: #f6f6f6;
+        text-align: center;
+    }
+    .active {
+        color: #fff;
+        background-color: #d30919;
+    }
+}
+
+.rank-top-goods {
+    >div {
+        display: none;
+    }
+    .show {
+        display: block;
+    }
+        ul {
+            width: 88%;
+            margin: 1rem auto;
+        }
+        li {
+            width: 100%;
+            height: 6.2rem;   
+            margin-top: .6rem;        
+        }
+        li:hover strong {
+            color: #e1251b;
+        }
+        li  div {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        li div span {
+            display: inline-block;
+            width: 3rem;
+            height: 4rem;
+            text-align: center;
+            font-size: 1.2rem;
+            color: #E6ac36;
+            font-family: Helvetica,Arial,sans-serif;
+        }
+        li div em {
+            font-size: 1.8rem;
+            color: #fff;
+            font-style: normal;
+            
+        }
+       li .top1 span {
+            
+            background: url(../img/bg/bg1-rank-up.png) no-repeat
+            center/cover;
+        }
+        li .top2 span {
+            background: url(../img/bg/bg2-rank-up.png) no-repeat
+             center/cover;
+        }
+        li .top3 span {
+            background: url(../img/bg/bg3-rank-up.png) no-repeat
+             center/cover;
+        }
+        li div img {
+            width: 6rem;
+            height: 6rem;
+        }
+        li div strong {
+            width: 10rem;
+            height: 3.2rem;
+            color: #333;
+            font-size: 1.2rem;            
+            font-family: 'Microsoft Yahei','PingFangSC-Medium',sans-serif,serif;
+            overflow: hidden;
+        }
+}
+
+
+
