@@ -2735,3 +2735,181 @@ ins {
            color: #fff;
        }
 }
+
+// 多快好省
+.jd-service-tag {
+    margin-top: 3rem;
+    ul {
+        display: flex;
+        justify-content: space-between;
+    }
+    li {
+        width: 22.4rem;
+        height: 4.2rem;
+        line-height: 4.2rem;
+        color: #444;
+        font-size: 1.8rem;
+        position: relative;
+        margin-left: 4.6rem;
+    }
+    li::before {
+        content: "";
+        width: 3.6rem;
+        height: 4.2rem;
+        background: url(../img/bg/bg-service-tag.png) no-repeat
+         0 0;  
+         background-size: 11.4rem 8.6rem;  
+        position: absolute;
+        left: -4.6rem;
+    }
+    li:nth-child(2)::before {
+        background-position: -3.9rem 0;
+    }
+    li:nth-child(3)::before {
+        background-position: -7.8rem 0;
+    }
+    li:nth-child(4)::before {
+        background-position: 0 -4.3rem;
+    }
+}
+
+
+// 页脚
+#footer {
+    width: 100%;
+    margin:  3rem auto;    
+    border-top: 1px solid #ddd;
+}
+
+.footer-container {
+    width: 100rem; 
+    margin: 0 auto; 
+}
+
+.jd-service-lk {
+    padding-bottom: 3rem;
+    border-bottom: 1px solid #ddd;
+    
+    .lk-container {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 3rem;
+    }
+     section h3 {
+        height: 2.2rem;
+        font-weight: normal;
+        font-size: 1.4rem;
+        color: #333;
+    }
+    .lk-txt {
+        margin-top: .4rem;
+    }
+    .lk-txt li {
+        margin-top: .2rem;
+    }
+    .lk-txt li a {
+       font-size: 1.2rem;
+       color: #999;       
+    }
+    .lk-txt li a:hover {
+        color: #e1251b;     
+     }
+    .jd-proprietary p {
+        width: 18rem;
+        font-size: 1.2rem;
+        color: #666;
+        margin-top: 1rem;
+    }
+    .jd-proprietary section {
+        text-align: center;
+    }
+    .jd-proprietary section a {
+        text-align: right;
+        color: #666;
+        margin-top: 1rem;
+        display: block;
+        font-size: 1.2rem;
+    }
+    .jd-proprietary section a:hover {
+        color: #e1251b;
+    }
+}
+
+
+//版权信息
+
+.copyright-block {
+    .copyright-info {
+        
+    }
+    .copyrigth-desc {
+        text-align: center;
+        margin-top: 3rem;
+    }
+}
+.copyright-info {
+    ul {
+        display: flex;
+        justify-content: space-between;
+    } 
+    li {
+       
+    }
+    li a {
+        display: inline-block;
+        margin-top: .6rem;
+        color: #999;
+        font-size: 1.2rem;
+    }
+}
+
+.copyrigth-desc {
+    p, a{
+        color: #999;
+        font-size: 1.2rem;
+        
+    }
+    p {
+        margin-top: .4rem;
+    }
+    a {
+        display: inline-block;
+        padding: 0 .4rem;
+    }
+    a:hover {
+        color: #e1251b;
+    }
+} 
+.foreign-lk {
+    ul {
+        margin: .6rem auto;
+        width: 60%;
+        display: flex;
+        justify-content: space-between;
+    }
+    li {
+        position: relative;
+    }
+    li::before {
+        content: "";
+        width: 1.6rem;
+        height: 1.2rem;
+        background: url(../img/ico-map.png) no-repeat
+        0 0;
+        position: absolute;
+        left: -2rem;
+        top: .2rem;
+    }
+    li:nth-child(2)::before {
+        background-position: -1.6rem 0;
+    }
+    li:nth-child(3)::before {
+        background-position: -4rem 0;
+    }
+    li:nth-child(4)::before {
+        background-position: 0 -1.3rem;
+    }
+    li:nth-child(5)::before {
+        background-position: -1.8rem -1.6rem;
+    }
+}
