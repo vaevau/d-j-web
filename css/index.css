@@ -451,8 +451,6 @@ html {
   #main .main-l {
     width: 20%;
     position: relative; }
-  #main .main-m {
-    width: 60%; }
   #main .main-r {
     width: 20%;
     background-color: #fff; }
@@ -495,10 +493,14 @@ html {
   left: 1.6rem;
   position: absolute;
   display: none; }
+.main-l .show {
+  display: flex; }
 .main-l .cate-l {
-  width: 74%; }
+  width: 74%;
+  border: 1px solid red; }
 .main-l .cate-r {
-  width: 24%; }
+  width: 24%;
+  border: 1px solid red; }
 
 .cate-l .cate-detail {
   margin-top: 1.2rem; }
@@ -1801,7 +1803,7 @@ ins {
   height: 2rem;
   background: url(../img/bg/bg-channel-center.png) no-repeat 0 0/cover;
   margin-left: -6.4rem;
-  margin-top: .5rem;
+  margin-top: 1rem;
   position: absolute; }
 .channel-hd h1::after {
   content: "";
@@ -1810,7 +1812,7 @@ ins {
   background: url(../img/bg/bg-channel-center.png) no-repeat -2.4rem 0/cover;
   position: absolute;
   margin-left: 3.6rem;
-  margin-top: .5rem; }
+  margin-top: 1rem; }
 
 .channel-box .hd-box {
   display: flex;
@@ -1954,7 +1956,7 @@ ins {
   margin: 3.6rem auto; }
 .rcmd-item .item-info p {
   width: 17rem;
-  height: 4rem;
+  height: rem;
   margin-top: 0rem 0 0 .4rem;
   color: #666;
   font-size: 1.2rem;
@@ -2023,7 +2025,6 @@ ins {
 .rcmd-item .lookfor-similar .similar-btn .ico-eye {
   width: 1.6rem;
   height: 1.6rem;
-  margin-top: -.4rem;
   vertical-align: middle;
   display: inline-block;
   background: url(../img/bg/bg-lookfor-similar.png) no-repeat center/cover; }

@@ -596,9 +596,7 @@ html {
         width: 20%;
         position: relative;
     }
-    .main-m {
-        width: 60%;  
-        // border: 1px solid red;   
+    .main-m {  
     }
     .main-r {
         width: 20%;
@@ -642,7 +640,6 @@ html {
         width: 80rem;
         height: 68rem;
         position: absolute;
-        // display: none;
         box-shadow: .1rem .2rem .4rem  #333;
         top: 0;
         left: 20rem;
@@ -658,11 +655,17 @@ html {
         position: absolute;
         display: none;
     }
+    .show {
+        display: flex;
+    }
+
     .cate-l {
         width: 74%;
+        border: 1px solid red;
     }
     .cate-r {
         width: 24%;
+        border: 1px solid red;
         }
 }
 .cate-l {
@@ -2387,7 +2390,7 @@ ins {
         height: 2rem;
         background: url(../img/bg/bg-channel-center.png) no-repeat 0 0/cover;
         margin-left: -6.4rem;
-        margin-top: .5rem;
+        margin-top: 1rem;
         position: absolute;
         
     }
@@ -2399,7 +2402,7 @@ ins {
          -2.4rem 0/cover;
          position: absolute;
          margin-left: 3.6rem;
-         margin-top: .5rem;
+         margin-top: 1rem;
     }
 }
 .channel-box {
@@ -2508,8 +2511,6 @@ ins {
         margin-top: 2.2rem;
         background-color: #fff;
     }
-    .rcmd-main {
-    }
 }
 
 .rcmd-nav {
@@ -2566,11 +2567,6 @@ ins {
     }
 }
 
-.rcmd-main {
-    .rcmd-item {
-
-    }
-}
 .rcmd-item {
        ul {
            display: flex;
@@ -2600,7 +2596,7 @@ ins {
        }
        .item-info p{
             width: 17rem;
-            height: 4rem;
+            height: rem;
             margin-top: 0rem 0 0 .4rem;
             color: #666;
             font-size: 1.2rem;
@@ -2685,7 +2681,6 @@ ins {
        .lookfor-similar .similar-btn .ico-eye{
            width: 1.6rem;
            height: 1.6rem;
-          margin-top: -.4rem;
            vertical-align: middle;
            display: inline-block;
            background: url(../img/bg/bg-lookfor-similar.png) no-repeat

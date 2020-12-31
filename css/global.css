@@ -28,12 +28,7 @@ a:hover {
 
 
 /* 所有a标签 */
-nav a {
-   color:#999;    
-}
-nav a:hover {
-    color: #e1251b;
-}
+
 .active-color {
     color: #f10215;
 }
