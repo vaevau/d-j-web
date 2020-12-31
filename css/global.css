@@ -1,0 +1,56 @@
+body,ul,p,li,input,button,span,h1,h2,h3,h4,h5{
+    padding: 0;
+    margin: 0;
+}
+body {
+    background: #f4f4f4;
+    font: 1.2rem/1.5 'Microsoft YaHei','Heiti SC',tahoma,arial,'Hiragino Sans GB',"\5B8B\4F53",sans-serif;
+}
+ul,li{
+    list-style: none; 
+}
+a {
+    text-decoration: none;
+}
+img, input, button {
+    border: none;
+    outline: none;
+}
+* {
+    box-sizing: border-box;
+}
+a {
+    color: #999;
+}
+a:hover {
+    color: #e1251b;
+}
+
+
+/* 所有a标签 */
+nav a {
+   color:#999;    
+}
+nav a:hover {
+    color: #e1251b;
+}
+.active-color {
+    color: #f10215;
+}
+
+
+/* 布局方式 */
+.dsply-flex{
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* 边框阴影 */
+.box-shadow {
+    border: 1px solid rgb(235, 235, 235);
+    box-shadow: 0px 1px 1px #ccc;
+    border-top: none;
+}
