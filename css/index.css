@@ -59,7 +59,7 @@ html {
   width: 100%;
   position: absolute;
   top: 0;
-  z-index: 1; }
+  z-index: 100; }
   .nav-ls-hide .nav-ls-container {
     width: 100rem;
     margin: -.1rem auto;
@@ -71,6 +71,10 @@ html {
     padding: 1rem; }
   .nav-ls-hide .regional-ls, .nav-ls-hide .my-jingdong, .nav-ls-hide .enterprise-purchase,
   .nav-ls-hide .customer-service, .nav-ls-hide .web-nav, .nav-ls-hide .qr-ls {
+    display: none; }
+  .nav-ls-hide .show {
+    display: block; }
+  .nav-ls-hide .hide {
     display: none; }
 
 .regional-ls {
@@ -194,9 +198,10 @@ html {
     border-top: 1px solid whitesmoke; }
 
 .web-nav {
-  display: flex;
-  justify-content: space-between;
   width: 100rem; }
+  .web-nav .web-nav-wrapper {
+    display: flex;
+    justify-content: space-between; }
   .web-nav section {
     border-left: 1px solid #f5f5f5; }
   .web-nav h4 {
@@ -231,35 +236,32 @@ html {
 
 .qr-ls {
   width: 19rem;
-  position: absolute;
-  top: 3.4rem;
   right: 0;
-  background-color: #fff;
   z-index: 4;
   box-shadow: .1rem .4rem .4rem #333 !important; }
+  .qr-ls .qr-code-pic {
+    width: 7rem;
+    height: 7rem;
+    border: 1px solid #999; }
+  .qr-ls .qr-code-info {
+    width: 9.4rem;
+    margin-left: .8rem; }
   .qr-ls > div {
     display: flex;
     border-bottom: 1px solid #f5f5f5;
     justify-content: flex-start;
-    padding: 1rem;
-    margin: auto;
+    margin-top: 1rem;
     align-items: flex-start; }
     .qr-ls > div h5 {
       color: #666;
       font-size: 1.2rem;
-      font-weight: normal;
-      margin-left: .6rem; }
+      font-weight: normal; }
     .qr-ls > div p {
-      color: #f10214;
-      margin-top: .4rem;
-      margin-left: .6rem;
-      font-size: 1.2rem; }
+      color: #f10214; }
     .qr-ls > div .mobbile-device-lk {
       display: flex;
       flex-wrap: nowrap;
       margin-top: .2rem; }
-    .qr-ls > div li {
-      margin-left: .2rem; }
     .qr-ls > div li a {
       display: block;
       width: 2.8rem;
@@ -271,10 +273,6 @@ html {
     .qr-ls > div li:nth-child(3) > a {
       background: url(../img/sprite_mobile.png) no-repeat 0 -5rem/cover;
       background-size: 2.8rem 7.8rem; }
-    .qr-ls > div div:nth-child(1) {
-      width: 7rem;
-      height: 7rem;
-      border: 1px solid #999; }
   .qr-ls > div:nth-child(5) {
     border: none !important; }
   .qr-ls .qr-code1 {

@@ -3,31 +3,30 @@
     <!-- 简体中文zh-CN -->
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>东晋购物</title>
     <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css">
      <link rel="stylesheet" href="css/global.css">
     <link rel="stylesheet" href="css/index.css">
-
- 
     
 </head>
 <body>
+
      <!-- 顶部导航条 --> 
     <nav id="nav">       
         <div id="banner" class="dsply-flex">                                              
-            <div class="banner-l"><a href="#"><i class="fa fa-map-marker" aria-hidden="true"></i>上海</a></div>                
+            <div class="banner-l J_current_place"><a href="#"><i class="fa fa-map-marker" aria-hidden="true"></i>上海</a></div>                
             <div class="banner-r">  
-                <ul class="dsply-flex">              
+                <ul class="dsply-flex">                   
                     <li class="resign spacer"><a href="#">您好，请登录</a><a class="login">免费注册</a></li>  
-                     <li class="spacer"></li>               
+                    <li class="spacer"></li>               
                     <li class="spacer"><a href="#">我的订单</a></li>                    
-                    <li class="my-jd-txt spacer ico-arrow-down"><a href="#">我的京东</a></li>                    
+                    <li class="my-jd-txt spacer ico-arrow-down J_nav_lk"><a href="#">我的京东</a></li>                    
                     <li class="spacer"><a href="#">京东会员</a></li>                
-                    <li class="enterprise-txt spacer ico-arrow-down"><a href="#">企业采购</a></li>
-                    <li class="cst-server-txt spacer ico-arrow-down"><a href="#">客户服务</a></li>                    
-                    <li class="web-nav-txt spacer ico-arrow-down"><a href="#">网站导航</a></li>                   
-                    <li><a href="#">手机京东</a></li>
+                    <li class="enterprise-txt spacer ico-arrow-down J_nav_lk"><a href="#">企业采购</a></li>
+                    <li class="cst-server-txt spacer ico-arrow-down J_nav_lk"><a href="#">客户服务</a></li>                    
+                    <li class="web-nav-txt spacer ico-arrow-down J_nav_lk"><a href="#">网站导航</a></li>                   
+                    <li class="J_nav_lk"><a href="#">手机京东</a></li>
                 </ul>
             </div>
         </div>      
@@ -36,8 +35,8 @@
 
     <!-- 隐藏内容 -->
     <div class="nav-ls-hide">
-        <div class="nav-ls-container dsply-flex">           
-            <div class="regional-ls box-shadow show">
+        <div id="J_nav_ls" class="nav-ls-container dsply-flex">           
+            <div class="regional-ls box-shadow">
                     <div class="CN-list">
                         <ul class="dsply-flex">
                             <li><a href="">北京</a></li>
@@ -96,7 +95,7 @@
                     </ul>
                 </section>          
             </div>
-           <div class="my-jingdong box-shadow">
+           <div class="my-jingdong box-shadow J_nav_ls">
                 <ul class="jd-ul1">
                     <li><a href="">待处理订单</a></li>
                     <li><a href="">消息</a></li>
@@ -112,7 +111,7 @@
                     <li><a href="">我的理财</a></li>
                 </ul>
             </div>
-            <div class="enterprise-purchase box-shadow ">
+            <div class="enterprise-purchase box-shadow J_nav_ls">
                 <ul class="dsply-flex">
                     <li><a href="">企业购</a></li>
                     <li><a href="">商用场景管</a></li>
@@ -122,7 +121,7 @@
                     <li><a href="">微信企业服务</a></li>
                 </ul>
             </div>
-            <div class="customer-service box-shadow">
+            <div class="customer-service box-shadow J_nav_ls">
                 <section class="customer">
                     <h4>客户</h4>
                     <ul class="dsply-flex">
@@ -149,8 +148,9 @@
                         </ul>
                 </section>
             </div>
-            <div class="web-nav box-shadow">
-                <section class="special-topic">
+            <div class="web-nav box-shadow J_nav_ls">
+                <div class="web-nav-wrapper">
+                    <section class="special-topic">
                     <h4>特色主题</h4>
                     <ul>
                         <li><a href="">新品首发</a></li>
@@ -227,12 +227,13 @@
                         <li><a href="">知识产权维权</a></li>
                     </ul>
                 </section>
+              </div>
             </div> 
-             <div class="qr-ls">
+             <div class="qr-ls J_nav_ls">
                 <i class="fa fa-caret-up"></i>
                 <div>
-                    <div class="qr-code1"></div>
-                    <div>
+                    <div class="qr-code1 qr-code-pic"></div>
+                    <div class="qr-code-info">
                         <h5>手机京东</h5>
                         <p>新人专享大礼包</p>
                         <div class="mobbile-device-lk">
@@ -243,15 +244,15 @@
                     </div>
                 </div>
                 <div>
-                    <div class="qr-code2"></div>
-                        <div>
+                    <div class="qr-code2 qr-code-pic"></div>
+                        <div class="qr-code-info">
                             <h5>关注京东JD.COM</h5>
                             <p>抢5元红包</p>
                         </div>
                 </div>
                 <div>
-                    <div class="qr-code3"></div>
-                    <div>
+                    <div class="qr-code3 qr-code-pic"></div>
+                    <div class="qr-code-info">
                         <h5>京东金融客户端</h5>
                         <p>新人专享大礼包</p>
                         <div class="mobbile-device-lk">                            
@@ -261,8 +262,8 @@
                     </div>
                 </div>
                 <div>
-                    <div class="qr-code4"></div>
-                    <div>
+                    <div class="qr-code4 qr-code-pic"></div>
+                    <div class="qr-code-info">
                         <h5>京东健康客户端</h5>                                
                         <div class="mobbile-device-lk">
                             <li><a href="#"></a></li>
@@ -6563,6 +6564,6 @@
         </ul>
     </ins>
 
-  
+    <script src="js/index.js"></script>
 </body>
 </html>
