@@ -3,11 +3,15 @@
     var oCurntPlace = doc.querySelector('.J_current_place');    
     var oRegionalLs = doc.querySelector('#J_nav_ls .regional-ls');
     var aNavLk = doc.getElementsByClassName('J_nav_lk');
-    var aNavLs = doc.getElementsByClassName('J_nav_ls');    
-    var i = 0, aLkLen = aNavLk.length,
-        j = 0, aLsLen = aNavLs.length;
-    var h = s = 0;  //记录鼠标是否在目标身上 
+    var aNavLs = doc.getElementsByClassName('J_nav_ls');
+    var aCateLk = doc.querySelectorAll('.J_cate_lk li');
+    var aCateLs = doc.getElementsByClassName('cate-item'); 
+    var i = j = k = l = 0, aLkLen = aNavLk.length,
+                           aLsLen = aNavLs.length,
+                           cateLkLen = aCateLk.length,
+                           cateLsLen = aCateLs.length;
 
+    var h = s = 0;  //记录鼠标是否在目标身上 
     var init = function(){
         bindEvent();
     }
@@ -16,6 +20,7 @@
         oCurntPlace.addEventListener('mouseout', hide, false); 
         oRegionalLs.addEventListener('mouseover', show, false);
         oRegionalLs.addEventListener('mouseout', hide, false); 
+
         for(; i<aLkLen; i++){ 
             aNavLk[i].idx = i;        
             aNavLk[i].addEventListener('mouseover', showNavList, false);
@@ -26,24 +31,24 @@
             aNavLs[j].addEventListener('mouseover', showNavList, false);
             aNavLs[j].addEventListener('mouseout', hideNavList, false);
         }
-    }
-    function addClass(obj, cn){
-        if(!hasClass(obj, cn)){
-            obj.className += ' ' + cn;
+        for (; k<cateLkLen; k++){
+            aCateLk[k].idx = k;                  
+            aCateLk[k].addEventListener('mouseover', showCateList, false);
+            aCateLk[k].addEventListener('mouseout', hideCateList, false);
         }
-     }
-     function hasClass(obj, cn){
-        var reg = new RegExp("\\b" + cn + "\\b");
-        return reg.test(obj.className);
-     }
-     function rmClass(obj, cn){
-        var reg = new RegExp("\\b" + cn + "\\b");
-        return obj.className = obj.className.replace(reg,'');  
-     }
-   
+        for (; l<cateLsLen; l++){
+            aCateLs[l].idx = l;                  
+            aCateLs[l].addEventListener('mouseover', showCateList, false);
+            aCateLs[l].addEventListener('mouseout', hideCateList, false);
+        }
+    }
+    function aa(e){
+        alert(e.target)
+    }
+
     function show(){   
-        h = s = 1;                     
-        addClass(oRegionalLs,'show');
+        h = s = 1;                       
+            addClass(oRegionalLs,'show');
     }
     function hide(){
         h = s = 0;
@@ -53,22 +58,39 @@
             }
         },100);
     }
-
      function showNavList(){
          var index = this.idx;
          h = s = 1; 
-        addClass(aNavLs[index], 'show');            
+        //  var reg1 =  /\bJ_nav_lk\b/;
+        //  var reg2 = /\bcate-item\b/;
+        // 通过正则判断当前移入的是那个目标，让所有
+        //隐藏列表共用同一个显示隐藏函数,
+            addClass(aNavLs[index], 'show');             
      }
      function hideNavList(){
         var index = this.idx;
-         h = s = 0;         
+         h = s = 0;       
         if(h !==1 || s !== 1){
             rmClass(aNavLs[index], 'show'); 
-            }                  
+        }                  
      }
 
+     function showCateList(){
+        var index = this.idx;
+        h = s = 1; 
+           addClass(aCateLs[index], 'show');
+    }
+    function hideCateList(){
+        var index = this.idx;
+         h = s = 0;       
+        if(h !==1 || s !== 1){
+            // rmClass(aNavLs[index], 'show'); 
+            rmClass(aCateLs[index], 'show'); 
+        }                  
+     } 
     init();
 })(document);
+
 
 
 
