@@ -463,6 +463,12 @@ html {
             width: 39.2rem;
             height: 3.2rem;
             padding-right: 2rem;
+            color: rgb(163, 162, 162);
+            font-size: 1.2rem;
+        }
+        .srh-ipt .input:focus {
+            opacity: .6;
+            filter: alpha(opacity=60);
         }
         .srh-ipt .fa-camera {
             display: block;

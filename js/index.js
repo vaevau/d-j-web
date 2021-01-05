@@ -1,11 +1,10 @@
 ;(function(doc){
-    var arr = ['您好，请登录','我的订单','我的京东','京东会员','企业采购','客户服务','网站导航','手机京东'];
-    var oCurntPlace = doc.querySelector('.J_current_place');    
-    var oRegionalLs = doc.querySelector('#J_nav_ls .regional-ls');
-    var aNavLk = doc.getElementsByClassName('J_nav_lk');
-    var aNavLs = doc.getElementsByClassName('J_nav_ls');
-    var aCateLk = doc.querySelectorAll('.J_cate_lk li');
-    var aCateLs = doc.getElementsByClassName('cate-item');
+    var oCurntPlace = doc.querySelector('.J_current_place'),   
+        oRegionalLs = doc.querySelector('#J_nav_ls .regional-ls'),
+        aNavLk = doc.getElementsByClassName('J_nav_lk'),
+        aNavLs = doc.getElementsByClassName('J_nav_ls'),
+        aCateLk = doc.querySelectorAll('.J_cate_lk li'),
+        aCateLs = doc.getElementsByClassName('cate-item');
     // var oul = doc.getElementById('J_cate_lk');
     
     var i = j = k = l = 0, aLkLen = aNavLk.length,
@@ -14,15 +13,21 @@
                            cateLsLen = aCateLs.length;
 
     var h = s = 0;  //记录鼠标是否在目标身上 
+    var inputVal = ['芭比娃娃','哇哈哈','机械键盘','内裤','电脑免费租','格力变频空调','办公椅','500G硬盘'],
+        lkTxtVal = ['超市购好物','家电超级五','苹果免息购','工业年末庆'],
+        oIptVal = doc.querySelector('.srh-ipt .input'),
+        oLkTxtVal = doc.querySelector('.rcm-lk .active');    
     var init = function(){
         bindEvent();
+        setvValue();
+        
     }
     function bindEvent(){  
         oCurntPlace.addEventListener('mouseover', show, false);
         oCurntPlace.addEventListener('mouseout', hide, false); 
         oRegionalLs.addEventListener('mouseover', show, false);
         oRegionalLs.addEventListener('mouseout', hide, false); 
-
+        
         for(; i<aLkLen; i++){ 
             aNavLk[i].idx = i;        
             aNavLk[i].addEventListener('mouseover', showNavList, false);
@@ -46,6 +51,8 @@
             aCateLs[l].addEventListener('mouseover', showCateList, false);
             aCateLs[l].addEventListener('mouseout', hideCateList, false);
         }
+        oIptVal.addEventListener('focus', clearEvent, false);
+        oIptVal.addEventListener('blur', recoverEvent, false);
     }
 
     // 事件委托
@@ -107,7 +114,6 @@
             rmClass(aNavLk[index], 'active-bg'); 
         }                  
      }
-
      function showCateList(){
         var index = this.idx;
         h = s = 1; 
@@ -121,7 +127,34 @@
         }                  
      } 
 
+     //搜索框相关
      
+        Array.prototype.randomEle = function(){
+             return this[Math.floor(Math.random()*this.length)];         
+     }
+     
+    var timer_1 =  setInterval(setIpuVal, 9000),
+        timer_2 = setInterval(setLkVal, 4000);
+     function setIpuVal(){
+        var iptEle = inputVal.randomEle();
+            oIptVal.value = iptEle;         
+     }
+     function setLkVal(){
+        var lkEle = lkTxtVal.randomEle();
+            oLkTxtVal.innerHTML = lkEle;
+     }
+
+     function clearEvent(){        
+        clearInterval(timer_1);
+     }
+     function recoverEvent(){       
+        inputVal.forEach((item, index) =>{
+            if(oIptVal.value === item){
+               timer_1 = setInterval(setIpuVal, 9000);
+            }
+        }) 
+     }
+    
     init();
 })(document);
 

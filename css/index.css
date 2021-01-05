@@ -350,7 +350,12 @@ html {
   .search .srh-ipt .input {
     width: 39.2rem;
     height: 3.2rem;
-    padding-right: 2rem; }
+    padding-right: 2rem;
+    color: #a3a2a2;
+    font-size: 1.2rem; }
+  .search .srh-ipt .input:focus {
+    opacity: .6;
+    filter: alpha(opacity=60); }
   .search .srh-ipt .fa-camera {
     display: block;
     height: 3.2rem;
