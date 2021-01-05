@@ -16,11 +16,10 @@
     var inputVal = ['芭比娃娃','哇哈哈','机械键盘','内裤','电脑免费租','格力变频空调','办公椅','500G硬盘'],
         lkTxtVal = ['超市购好物','家电超级五','苹果免息购','工业年末庆'],
         oIptVal = doc.querySelector('.srh-ipt .input'),
-        oLkTxtVal = doc.querySelector('.rcm-lk .active');    
+        oLkTxtVal = doc.querySelector('.rcm-lk .active'),
+        oSrhHelp = doc.getElementById('J_search_helper');  
     var init = function(){
         bindEvent();
-        setvValue();
-        
     }
     function bindEvent(){  
         oCurntPlace.addEventListener('mouseover', show, false);
@@ -127,8 +126,7 @@
         }                  
      } 
 
-     //搜索框相关
-     
+     //搜索框相关  
         Array.prototype.randomEle = function(){
              return this[Math.floor(Math.random()*this.length)];         
      }
@@ -145,7 +143,8 @@
      }
 
      function clearEvent(){        
-        clearInterval(timer_1);
+        clearInterval(timer_1);        
+        oSrhHelp.style.display = 'block';
      }
      function recoverEvent(){       
         inputVal.forEach((item, index) =>{
@@ -153,7 +152,9 @@
                timer_1 = setInterval(setIpuVal, 9000);
             }
         }) 
+        oSrhHelp.style.display = 'none';
      }
+
     
     init();
 })(document);

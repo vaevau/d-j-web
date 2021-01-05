@@ -450,6 +450,7 @@ html {
         display: flex;
         justify-content: space-around;
         margin-top: 3rem;
+       
         .srh-ipt {
             display: flex;
             justify-content: space-between;
@@ -458,6 +459,7 @@ html {
             border: .2rem solid #e1251b;
             padding-left: 2rem;
             background-color: transparent;
+            position: relative;
         }
         .srh-ipt .input {
             width: 39.2rem;
@@ -487,8 +489,46 @@ html {
             width: 5.8rem;
             height: 3.2rem;
             background-color: #e1251b;
-            cursor: pointer;
-            
+            cursor: pointer;            
+        }
+        .srh-ipt .search-helper {            
+            width: 44rem;            
+            border: 1px solid red;
+            position: absolute;
+            top: 3.6rem;
+            left: 0;
+            background-color: #fefefe;
+            border: 1px solid #ccc;
+            box-shadow: 1px 2px 1px rgba(0,0,0,.2);
+            display: none;
+        }
+        
+        .search-helper ul {
+            border-bottom: 1px solid rgb(231, 231, 231);
+        }
+        .search-helper .del-all {
+            display: block;
+            height: 2.8rem;
+            line-height: 2.8rem;
+            width: 100%;
+            text-align: right;
+            padding: .1rem .6rem;                        
+        }
+         .search-helper li {
+            display: flex;
+            justify-content: space-between;
+            height: 2.8rem;
+            line-height: 2.8rem; 
+            padding: .1rem .6rem;           
+        }
+        .search-helper li:hover {
+            background-color: #f5f5f5;          
+        }
+        .search-helper li a{
+            color: #005AA0;   
+        }
+        .search-helper li  span{
+            color: #AAA;   
         }
         .shopping-car {
             border: 1px solid #eee;
@@ -533,6 +573,7 @@ html {
             right: 0;
             top: 0;
         }
+       
     }
 
 
