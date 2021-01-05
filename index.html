@@ -296,9 +296,16 @@
         <div class="header-m">
             <div class="search">
                 <div class="srh-ipt">
-                    <input type="text"  class="input"/>
+                    <input type="text"  class="input" placeholder="芭比娃娃"/>
                     <span class="fa fa-camera" aria-hidden="true"></span>
                     <button class="fa fa-search" aria-hidden="true"></button>
+                    <div class="search-helper" id="J_search_helper">
+                        <ul>
+                            <li><a href="#">无限键盘</a><span>搜索历史</span></li>
+                            <li><a href="#">芭比娃娃</a><span>搜索历史</span></li>
+                        </ul>
+                        <a href="#" class="del-all" id="J_delete_all">全部删除</a>
+                    </div>
                 </div>
                 <div class="shopping-car">                        
                     <span class="fa fa-shopping-cart"></span>
@@ -350,7 +357,7 @@
             <div class="main-l">
                 <div class="goods-cate">
                     <div class="cate-lk J_cate_lk">
-                        <ul>
+                        <ul id="J_cate_lk">
                             <li>
                                 <a href="#">家用电器</a>
                             </li>
@@ -433,7 +440,7 @@
                             </li>
                         </ul>
                     </div>
-                    <div class="cate-ls J_cate_ls">                        
+                    <div class="cate-ls J_cate_ls" id="J_div">                        
                             <div class="cate-item" >                        
                                 <div class="cate-l">
                                     <div class="cate-top-title">

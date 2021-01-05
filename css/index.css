@@ -19,12 +19,11 @@ html {
     color: #f10215; }
   #banner .login {
     margin-left: .4rem; }
+  #banner .active-bg {
+    background: #fff; }
 
 .banner-l {
   padding: .2rem 1rem; }
-
-.banner-l:hover {
-  background: #fff; }
 
 .banner-r {
   position: relative; }
@@ -42,9 +41,6 @@ html {
     margin-left: 1.2rem;
     padding: 0 1.4rem 0 .6rem;
     position: relative; }
-  .banner-r .my-jd-txt:hover, .banner-r .enterprise-txt:hover,
-  .banner-r .cst-server-txt:hover, .banner-r .web-nav-txt:hover {
-    background: #fff; }
   .banner-r .ico-arrow-down::before {
     content: "";
     width: 1rem;
@@ -350,11 +346,17 @@ html {
     height: 3.6rem;
     border: .2rem solid #e1251b;
     padding-left: 2rem;
-    background-color: transparent; }
+    background-color: transparent;
+    position: relative; }
   .search .srh-ipt .input {
     width: 39.2rem;
     height: 3.2rem;
-    padding-right: 2rem; }
+    padding-right: 2rem;
+    color: #a3a2a2;
+    font-size: 1.2rem; }
+  .search .srh-ipt .input:focus {
+    opacity: .6;
+    filter: alpha(opacity=60); }
   .search .srh-ipt .fa-camera {
     display: block;
     height: 3.2rem;
@@ -371,6 +373,37 @@ html {
     height: 3.2rem;
     background-color: #e1251b;
     cursor: pointer; }
+  .search .srh-ipt .search-helper {
+    width: 44rem;
+    border: 1px solid red;
+    position: absolute;
+    top: 3.6rem;
+    left: 0;
+    background-color: #fefefe;
+    border: 1px solid #ccc;
+    box-shadow: 1px 2px 1px rgba(0, 0, 0, 0.2);
+    display: none; }
+  .search .search-helper ul {
+    border-bottom: 1px solid #e7e7e7; }
+  .search .search-helper .del-all {
+    display: block;
+    height: 2.8rem;
+    line-height: 2.8rem;
+    width: 100%;
+    text-align: right;
+    padding: .1rem .6rem; }
+  .search .search-helper li {
+    display: flex;
+    justify-content: space-between;
+    height: 2.8rem;
+    line-height: 2.8rem;
+    padding: .1rem .6rem; }
+  .search .search-helper li:hover {
+    background-color: #f5f5f5; }
+  .search .search-helper li a {
+    color: #005AA0; }
+  .search .search-helper li span {
+    color: #AAA; }
   .search .shopping-car {
     border: 1px solid #eee;
     display: flex;
