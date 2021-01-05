@@ -19,12 +19,11 @@ html {
     color: #f10215; }
   #banner .login {
     margin-left: .4rem; }
+  #banner .active-bg {
+    background: #fff; }
 
 .banner-l {
   padding: .2rem 1rem; }
-
-.banner-l:hover {
-  background: #fff; }
 
 .banner-r {
   position: relative; }
@@ -42,9 +41,6 @@ html {
     margin-left: 1.2rem;
     padding: 0 1.4rem 0 .6rem;
     position: relative; }
-  .banner-r .my-jd-txt:hover, .banner-r .enterprise-txt:hover,
-  .banner-r .cst-server-txt:hover, .banner-r .web-nav-txt:hover {
-    background: #fff; }
   .banner-r .ico-arrow-down::before {
     content: "";
     width: 1rem;

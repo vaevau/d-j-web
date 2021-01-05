@@ -24,14 +24,14 @@ html {
     .login {
         margin-left: .4rem;
     }
+    .active-bg{
+        background: #fff;
+    }
 }
 
 .banner-l {
     padding: .2rem 1rem;     
 }
-.banner-l:hover{
-    background: #fff;
-} 
 
 .banner-r {
     position: relative;
@@ -50,10 +50,6 @@ html {
         margin-left: 1.2rem;
         padding: 0 1.4rem 0 .6rem;     
         position: relative;
-    }
-    .my-jd-txt:hover, .enterprise-txt:hover,
-    .cst-server-txt:hover, .web-nav-txt:hover{
-        background: #fff;
     }
    
     .ico-arrow-down::before {
