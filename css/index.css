@@ -587,7 +587,12 @@ html {
   display: flex; }
 .main-m .img-ls {
   position: absolute;
-  left: -58rem; }
+  left: 0rem;
+  opacity: 1;
+  transition: all .3s ease-in-out;
+  -webkit-transition: all .3s ease-in-out;
+  -moz-transition: all .3s ease-in-out;
+  -o-transition: all .3s ease-in-out; }
 .main-m .img-ls li {
   width: 58rem;
   height: 47rem; }
@@ -611,6 +616,9 @@ html {
   -o-transition: all .2s ease-in-out; }
 .main-m .dot-ls li:hover {
   background-color: #fff;
+  box-shadow: 0 0 0.2rem 0.3rem rgba(44, 43, 43, 0.4); }
+.main-m .active {
+  background-color: #fff !important;
   box-shadow: 0 0 0.2rem 0.3rem rgba(44, 43, 43, 0.4); }
 
 .prv-next {

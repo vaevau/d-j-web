@@ -4,15 +4,16 @@
         aNavLk = doc.getElementsByClassName('J_nav_lk'),
         aNavLs = doc.getElementsByClassName('J_nav_ls'),
         aCateLk = doc.querySelectorAll('.J_cate_lk li'),
-        aCateLs = doc.getElementsByClassName('cate-item');
-    // var oul = doc.getElementById('J_cate_lk');
-    
+        aCateLs = doc.getElementsByClassName('cate-item');    
+    var h = s = 0;  //记录鼠标是否在目标身上 
     var i = j = k = l = 0, aLkLen = aNavLk.length,
                            aLsLen = aNavLs.length,
                            cateLkLen = aCateLk.length,
                            cateLsLen = aCateLs.length;
 
-    var h = s = 0;  //记录鼠标是否在目标身上 
+    
+
+    //搜索框相关　
     var inputVal = ['芭比娃娃','哇哈哈','机械键盘','内裤','电脑免费租','格力变频空调','办公椅','500G硬盘'],
         lkTxtVal = ['超市购好物','家电超级五','苹果免息购','工业年末庆'],
         oIptVal = doc.querySelector('.srh-ipt .input'),
@@ -22,11 +23,20 @@
         aSrhLi = oSrhHpUl.querySelectorAll('li'),
         oDelAll = doc.getElementById('J_delete_all'),
         oSrhBtn = doc.getElementById('J_srh_btn');
-              
+
+    //轮播图相关
+    var oBannerImg = doc.getElementById('J_banner_img'),
+        oBannerDot = doc.getElementById('J_banner_dot'),
+        aBannerImg = oBannerImg.querySelectorAll('li'),
+        aBannerDot = oBannerDot.querySelectorAll('li'),
+        oPrvBtn = doc.getElementById('J_prv_btn'),
+        oNextBtn = doc.getElementById('J_next_btn'),
+        m = 0,  aBnerDotLen = aBannerDot.length;
     var init = function(){
         bindEvent();
     }
     function bindEvent(){  
+        //显示隐藏，tab切换相关
         oCurntPlace.addEventListener('mouseover', show, false);
         oCurntPlace.addEventListener('mouseout', hide, false); 
         oRegionalLs.addEventListener('mouseover', show, false);
@@ -55,13 +65,23 @@
             aCateLs[l].addEventListener('mouseover', showCateList, false);
             aCateLs[l].addEventListener('mouseout', hideCateList, false);
         }
+        //搜索框相关
         oIptVal.addEventListener('focus', clearEvent, false);
         oIptVal.addEventListener('blur', recoverEvent, false);
         oSrhHpUl.addEventListener('mouseover', changeTxt,false);
         oSrhHpUl.addEventListener('mouseout', recoverTxt,false);
         oSrhHpUl.addEventListener('click', delSinglSrhEntry,false);
         oDelAll.addEventListener('click', delAllSrhEntry,false);
-        oSrhBtn.addEventListener('click', addSrhEntry, false)
+        oSrhBtn.addEventListener('click', addSrhEntry, false);
+
+        //轮播相关
+        oPrvBtn.addEventListener('click', prveImg);
+        oNextBtn.addEventListener('click', nextImg);
+        for(; m<aBnerDotLen; m++){
+            aBannerDot[m].idx = m;
+            aBannerDot[m].addEventListener('mouseover', switchImg)
+        }
+       
     }
 
     // 事件委托
@@ -209,14 +229,12 @@
             oSrhHelp.style.display = 'none';
         }
     }
-
     function delAllSrhEntry(e){
         e = e || window.e;
         var eTget = e.target || e.srcElement;        
         eTget.parentNode.innerHTML = '';
         rmClass(oSrhHelp, 'search-helper');
     }
-   
     function addSrhEntry(){
         var iptVal = oIptVal.value;
         if(iptVal == ''){
@@ -225,6 +243,76 @@
          var addLi = `<li><a href="#">${iptVal}</a><span>搜索历史</span></li>`;        
          oSrhHpUl.innerHTML += addLi;
     }
+
+  
+    //轮播图相关
+        // function switchImg(e){           
+        //     e = e || window.e;
+        //     var eTget = e.target || e.srcElement;  
+            
+        //     for(var i = 0,aBnerDotLen = aBannerDot.length; i<aBnerDotLen; i++){
+        //         aBannerDot[i].idx = i;                               
+        //    } 
+        //     if(eTget.tagName.toUpperCase() === 'LI'){                                                        
+        //         var index = eTget.idx;               
+        //         oBannerImg.style.left = -58*index + 'rem'; 
+        //         dotStyle();  
+        //         function dotStyle(){                   
+        //             for(i = 0; i<aBnerDotLen; i++){
+        //                 aBannerDot[i].className = '';
+        //             }
+        //               addClass(eTget, 'active'); 
+        //         }        
+        //     }              
+        // }
+        // function autoSwitchImg(e){
+        //     e = e || window.e;
+        //     var eTget = e.target || e.srcElement;  
+        //     var index = eTget.idx;
+        //     alert(index);
+        //     timer_3 = setInterval(() => {
+        //         for(var i = 0,aBnerDotLen = aBannerDot.length; i<aBnerDotLen; i++){
+        //             aBannerDot[i].idx = i;                               
+        //        } 
+        //         if(eTget.tagName.toUpperCase() === 'LI'){                                                        
+        //             var index = eTget.idx;               
+        //             oBannerImg.style.left = -58*index + 'rem';  
+        //             function dotStyle(){                   
+        //                 for(i = 0; i<aBnerDotLen; i++){
+        //                     aBannerDot[i].className = '';
+        //                 }
+        //                   addClass(eTget, 'active'); 
+        //             }        
+        //         } 
+        //     }, 3000);
+        // }
+    function switchImg(){
+         index = this.idx;
+        oBannerImg.style.left = -58*index + 'rem';
+        dotStyle();
+        autoSwitchImg()
+    }
+    function dotStyle(){        
+        for(var m = 0; m<aBnerDotLen; m++){
+            aBannerDot[m].className = '';
+        }        
+        addClass(aBannerDot[index], 'active');
+    }
+    function autoSwitchImg(){
+        timer_3 = setInterval(function(){
+            oBannerImg.style.left = -58*index + 'rem';            
+        }, 3000);
+      
+    }
+
+    function prveImg(){
+        oBannerImg.style.left = aa + 'rem';
+       
+    }
+    function nextImg(){
+        oBannerImg.style.left = 0 + 'rem';     
+    }
+
     init();
 })(document);
 

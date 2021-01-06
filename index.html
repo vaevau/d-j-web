@@ -277,12 +277,12 @@
         
 
         <!-- header部分 -->
-    <header id="header">
-        <div class="header-container dsply-flex">
+<header id="header">
+    <div class="header-container dsply-flex">
         <div class="header-l">
             <div class="jd-logo">
                 <!-- 　此处用heading标签迎合搜索引擎
-                  a标签当css加载不出来时增加用户体验 -->
+                a标签当css加载不出来时增加用户体验 -->
                 <h2>
                     <a href="#" class="jd-title-lk">京东，多快好省</a>
                 </h2> 
@@ -348,8 +348,7 @@
             </div>
         </div>
     </div>
-
-    </header>
+</header>
 
 
     <main id="main">   
@@ -3616,8 +3615,8 @@
         <!-- main 正中间轮播图 -->
             <div class="main-m">
                 <div class="banner">
-                    <ul class="img-ls">
-                        <li><a href="#"><img src="img/pic01-banner.jpg" alt=""></a></li>
+                    <ul class="img-ls" id="J_banner_img">
+                        <li><a href="#;"><img src="img/pic01-banner.jpg" alt=""></a></li>
                         <li><a href="#"><img src="img/pic02-banner.jpg" alt=""></a></li>
                         <li><a href="#"><img src="img/pic03-banner.jpg" alt=""></a></li>
                         <li><a href="#"><img src="img/pic04-banner.jpg" alt=""></a></li>
@@ -3626,8 +3625,8 @@
                         <li><a href="#"><img src="img/pic07-banner.jpg" alt=""></a></li>
                         <li><a href="#"><img src="img/pic08-banner.jpg" alt=""></a></li>
                     </ul>
-                    <ul class="dot-ls">
-                        <li></li>
+                    <ul class="dot-ls" id="J_banner_dot">
+                        <li class="active"></li>
                         <li></li>
                         <li></li>
                         <li></li>
@@ -3637,8 +3636,8 @@
                         <li></li>
                     </ul>
                     <ul class="prv-next">
-                        <li class="prv"><i class="fa fa-angle-left hover-opacity " aria-hidden="true"></i></li>
-                        <li class="next"><i class="fa fa-angle-right hover-opacity " aria-hidden="true"></i></li>
+                        <li class="prv" id="J_prv_btn"><i class="fa fa-angle-left hover-opacity " aria-hidden="true"></i></li>
+                        <li class="next" id="J_next_btn"><i class="fa fa-angle-right hover-opacity " aria-hidden="true"></i></li>
                     </ul>
                 </div>
             </div>
@@ -6190,5 +6189,50 @@
         return obj.className = obj.className.replace(reg,'');  
      }
     </script>
+
+    <script>
+        function getStyle(obj, attrName){
+            if(window.getComputedStyle){ //ff
+                //如果有该方法,
+                return getComputedStyle(obj, null)[attrName]
+                //getComputedStyle获取浏览器最终渲染的样式，包括了内联样式、嵌入样式和外部样式。
+                //null为可选参数，当不查询伪类元素是可填null或忽略                
+            }else {
+                return obj.currentStyle[attrName] //ie
+            }
+        }
+
+        function move(obj, attr, target, speed, callback){
+            clearInterval(ojb.timer);//每次执行完先清除定时器，防止目标加速
+            var currentMark = parseInt(getStyle(obj, attr));
+            if(currentMark > target){
+                speed = -speed;
+            } //让属性当前值和目标值做比较，决定属性值的增减
+
+            obj.timer = setInterval(function(){
+                var initAttrVal = parseInt(getStyle(obj, attr));
+                //获取某对象的初始属性值
+                var currentAttrVal = initAttrVal + speed;
+
+                if(speed > 0 && currentAttrVal > target 
+                || speed < 0 && currentAttrVal < target){
+                    currentAttrVal = target;
+                    //当speed为正，说明当前属性值currentAttrVal正在不断增大，
+                    //当，当前属性值大于目标值时，让currentAttrVal等于目标值，
+                    //让目标值停止增加，同时防止超过预期值。反之亦然。
+                }
+                obj.style[attr] = currentAttrVal + 'rem';
+
+                if(currentAttrVal == target){
+                    clearInterval(obj.timer);
+                    //达到目标值时清除定时器
+                    callback && callback();
+                    //这句忘记干啥用得了，
+                    //如果有回调函数则执行，相当于if(callback){callback()}                    
+                }
+            },30)
+        }
+    </script>
+
 </body>
 </html>

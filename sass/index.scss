@@ -777,7 +777,12 @@ html {
     }
     .img-ls {
        position: absolute;
-       left: -58rem;
+       left: 0rem;
+       opacity: 1;
+       transition: all .3s ease-in-out;
+    -webkit-transition: all .3s ease-in-out;
+    -moz-transition: all .3s ease-in-out;
+    -o-transition:all .3s ease-in-out;
     }
     .img-ls li{
         width: 58rem;
@@ -804,8 +809,12 @@ html {
         -moz-transition: all .2s ease-in-out;
         -o-transition:all .2s ease-in-out;
     }
-    .dot-ls li:hover {
+    .dot-ls li:hover{
         background-color: #fff;
+        box-shadow: 0 0 .2rem .3rem rgba(44, 43, 43,0.4);
+    }
+    .active {
+        background-color: #fff !important;
         box-shadow: 0 0 .2rem .3rem rgba(44, 43, 43,0.4);
     }
 }
