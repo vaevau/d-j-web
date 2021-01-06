@@ -382,7 +382,8 @@ html {
     background-color: #fefefe;
     border: 1px solid #ccc;
     box-shadow: 1px 2px 1px rgba(0, 0, 0, 0.2);
-    display: none; }
+    display: none;
+    z-index: 102; }
   .search .search-helper ul {
     border-bottom: 1px solid #e7e7e7; }
   .search .search-helper .del-all {
@@ -397,13 +398,21 @@ html {
     justify-content: space-between;
     height: 2.8rem;
     line-height: 2.8rem;
-    padding: .1rem .6rem; }
+    padding: .1rem .6rem;
+    cursor: pointer; }
   .search .search-helper li:hover {
     background-color: #f5f5f5; }
   .search .search-helper li a {
-    color: #005AA0; }
+    color: #005AA0;
+    width: 50%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis; }
   .search .search-helper li span {
-    color: #AAA; }
+    display: inline-block;
+    color: #AAA;
+    width: 44rem;
+    text-align: right; }
   .search .shopping-car {
     border: 1px solid #eee;
     display: flex;

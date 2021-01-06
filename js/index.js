@@ -17,7 +17,12 @@
         lkTxtVal = ['超市购好物','家电超级五','苹果免息购','工业年末庆'],
         oIptVal = doc.querySelector('.srh-ipt .input'),
         oLkTxtVal = doc.querySelector('.rcm-lk .active'),
-        oSrhHelp = doc.getElementById('J_search_helper');  
+        oSrhHelp = doc.getElementById('J_search_helper'),
+        oSrhHpUl = doc.querySelector('#J_search_helper ul'),      
+        aSrhLi = oSrhHpUl.querySelectorAll('li'),
+        oDelAll = doc.getElementById('J_delete_all'),
+        oSrhBtn = doc.getElementById('J_srh_btn');
+              
     var init = function(){
         bindEvent();
     }
@@ -52,6 +57,11 @@
         }
         oIptVal.addEventListener('focus', clearEvent, false);
         oIptVal.addEventListener('blur', recoverEvent, false);
+        oSrhHpUl.addEventListener('mouseover', changeTxt,false);
+        oSrhHpUl.addEventListener('mouseout', recoverTxt,false);
+        oSrhHpUl.addEventListener('click', delSinglSrhEntry,false);
+        oDelAll.addEventListener('click', delAllSrhEntry,false);
+        oSrhBtn.addEventListener('click', addSrhEntry, false)
     }
 
     // 事件委托
@@ -143,19 +153,78 @@
      }
 
      function clearEvent(){        
-        clearInterval(timer_1);        
-        oSrhHelp.style.display = 'block';
+        clearInterval(timer_1); 
+        setTimeout(function(){
+            oSrhHelp.style.display = 'block';
+        },350)       
      }
      function recoverEvent(){       
-        inputVal.forEach((item, index) =>{
+        inputVal.forEach((item) =>{
             if(oIptVal.value === item){
                timer_1 = setInterval(setIpuVal, 9000);
             }
         }) 
-        oSrhHelp.style.display = 'none';
+     }
+ 
+     function changeTxt(e){
+         e = e || window.e;
+       var  eTget = e.target || e.srcElement;
+       console.log(e);
+         if(eTget.tagName.toUpperCase() === 'LI' ){
+         }else if(eTget.tagName.toUpperCase() === 'SPAN'){
+             eTget.innerHTML = '立即删除';
+         }        
+     }
+     function recoverTxt(e){
+         e = e || window.e;
+         var eTget = e.target || e.srcElement;         
+         if(eTget.tagName.toUpperCase() === 'LI' ){
+        }else if(eTget.tagName.toUpperCase() === 'SPAN'){
+            eTget.innerHTML = '搜索历史';
+        } 
      }
 
-    
+    var aSrhLiLen = aSrhLi.length;
+    function delSinglSrhEntry(e){       
+        e = e || window.e;
+        var eTget = e.target || e.srcElement;        
+        if(eTget.tagName.toUpperCase() === 'LI' ){
+            
+       }else if(eTget.tagName.toUpperCase() === 'SPAN'){
+           eTget.parentNode.style.display = 'none'; 
+           aSrhLiLen--;
+           if( aSrhLiLen === 0){           
+            oSrhHelp.style.display = 'none';            
+           }
+       } 
+    }
+    oSrhHelp.onmouseover = function(){
+        h = s = 2;
+    }
+    oSrhHelp.onmouseout = function(){
+        h = s = 0;
+    }
+    doc.body.onclick = function(){
+        if(h !== 2 || s !== 2){
+            oSrhHelp.style.display = 'none';
+        }
+    }
+
+    function delAllSrhEntry(e){
+        e = e || window.e;
+        var eTget = e.target || e.srcElement;        
+        eTget.parentNode.innerHTML = '';
+        rmClass(oSrhHelp, 'search-helper');
+    }
+   
+    function addSrhEntry(){
+        var iptVal = oIptVal.value;
+        if(iptVal == ''){
+            iptVal = oIptVal.getAttribute('placeholder');
+        }
+         var addLi = `<li><a href="#">${iptVal}</a><span>搜索历史</span></li>`;        
+         oSrhHpUl.innerHTML += addLi;
+    }
     init();
 })(document);
 
