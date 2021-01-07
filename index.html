@@ -3616,7 +3616,7 @@
             <div class="main-m">
                 <div class="banner">
                     <ul class="img-ls" id="J_banner_img">
-                        <li><a href="#;"><img src="img/pic01-banner.jpg" alt=""></a></li>
+                        <li class="fade-in"><a href="#;"><img src="img/pic01-banner.jpg" alt=""></a></li>
                         <li><a href="#"><img src="img/pic02-banner.jpg" alt=""></a></li>
                         <li><a href="#"><img src="img/pic03-banner.jpg" alt=""></a></li>
                         <li><a href="#"><img src="img/pic04-banner.jpg" alt=""></a></li>
@@ -3624,6 +3624,7 @@
                         <li><a href="#"><img src="img/pic06-banner.jpg" alt=""></a></li>
                         <li><a href="#"><img src="img/pic07-banner.jpg" alt=""></a></li>
                         <li><a href="#"><img src="img/pic08-banner.jpg" alt=""></a></li>
+                        <li><a href="#;"><img src="img/pic01-banner.jpg" alt=""></a></li>
                     </ul>
                     <ul class="dot-ls" id="J_banner_dot">
                         <li class="active"></li>
@@ -6191,19 +6192,8 @@
     </script>
 
     <script>
-        function getStyle(obj, attrName){
-            if(window.getComputedStyle){ //ff
-                //如果有该方法,
-                return getComputedStyle(obj, null)[attrName]
-                //getComputedStyle获取浏览器最终渲染的样式，包括了内联样式、嵌入样式和外部样式。
-                //null为可选参数，当不查询伪类元素是可填null或忽略                
-            }else {
-                return obj.currentStyle[attrName] //ie
-            }
-        }
-
-        function move(obj, attr, target, speed, callback){
-            clearInterval(ojb.timer);//每次执行完先清除定时器，防止目标加速
+        function moveMent(obj, attr, target, speed, callback){
+            clearInterval(obj.timer);//每次执行完先清除定时器，防止目标加速
             var currentMark = parseInt(getStyle(obj, attr));
             if(currentMark > target){
                 speed = -speed;
@@ -6226,11 +6216,22 @@
                 if(currentAttrVal == target){
                     clearInterval(obj.timer);
                     //达到目标值时清除定时器
-                    callback && callback();
-                    //这句忘记干啥用得了，
+                    callback && callback();                    
                     //如果有回调函数则执行，相当于if(callback){callback()}                    
                 }
-            },30)
+            }, 30)
+        }
+
+
+        function getStyle(obj, attrName){
+            if(window.getComputedStyle){ //ff
+                //如果有该方法,
+                return getComputedStyle(obj, null)[attrName]
+                //getComputedStyle获取浏览器最终渲染的样式，包括了内联样式、嵌入样式和外部样式。
+                //null为可选参数，当不查询伪类元素是可填null或忽略                
+            }else {
+                return obj.currentStyle[attrName] //ie
+            }
         }
     </script>
 

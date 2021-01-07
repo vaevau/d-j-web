@@ -588,14 +588,21 @@ html {
 .main-m .img-ls {
   position: absolute;
   left: 0rem;
-  opacity: 1;
   transition: all .3s ease-in-out;
   -webkit-transition: all .3s ease-in-out;
   -moz-transition: all .3s ease-in-out;
   -o-transition: all .3s ease-in-out; }
 .main-m .img-ls li {
   width: 58rem;
-  height: 47rem; }
+  height: 47rem;
+  opacity: 0;
+  /*设置透明度为0   看不见 */
+  transition: all .8s ease-in-out;
+  -webkit-transition: all .8s ease-in-out;
+  -moz-transition: all .8s ease-in-out;
+  -o-transition: all .8s ease-in-out; }
+.main-m .img-ls .fade-in {
+  opacity: 1; }
 .main-m img {
   width: 100%;
   height: 100%; }

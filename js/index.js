@@ -34,6 +34,7 @@
         m = 0,  aBnerDotLen = aBannerDot.length;
     var init = function(){
         bindEvent();
+        
     }
     function bindEvent(){  
         //显示隐藏，tab切换相关
@@ -286,32 +287,127 @@
         //         } 
         //     }, 3000);
         // }
-    function switchImg(){
+        var index = 0;       
+    function switchImg(){          
+        clearInterval(timer_3);
+         currentIdx = this.idx;
+         // 记录当前索引值，和上一次做比较
+     
+        console.log(currentIdx-index);
+        for(var i=0; i<aBannerImg.length; i++){
+            aBannerImg[i].className = '';
+        }      
+        if(currentIdx > index  ){
+            aBannerImg[currentIdx].className = 'fade-in';
+        }else if(currentIdx < index) {
+            aBannerImg[currentIdx].className = 'fade-in';
+        }
+        if(index == aBannerImg.length-2){
+            aBannerImg[0].className = 'fade-in';
+        }
+        if(currentIdx == 0){
+            aBannerImg[currentIdx]
+            oBannerImg.style.left = 0;
+        }           
+        //以上为淡入淡出相关判断        
          index = this.idx;
-        oBannerImg.style.left = -58*index + 'rem';
-        dotStyle();
-        autoSwitchImg()
+         
+         dotStyle();
+        // oBannerImg.style.left = -58*index + 'rem';
+        moveMent(oBannerImg, 'left', -58*index, 20000, function(){
+            autoSwitchImg();  
+            //用户操作完成后，重新开始执行自动播放          
+        });
     }
-    function dotStyle(){        
+    function dotStyle(){   
+        if(index == aBannerImg.length-1){
+            index = 0;            
+            oBannerImg.style.left = 0;
+            //如果到了最后一张，则让从头开始
+        }else if(index == 0){            
+            index = aBannerImg.length-1;
+            oBannerImg.style.left = -58*aBannerImg.length;
+        }     
         for(var m = 0; m<aBnerDotLen; m++){
             aBannerDot[m].className = '';
         }        
         addClass(aBannerDot[index], 'active');
     }
-    function autoSwitchImg(){
-        timer_3 = setInterval(function(){
-            oBannerImg.style.left = -58*index + 'rem';            
-        }, 3000);
-      
+    var timer_3;
+    function autoSwitchImg(){ 
+                            
+       timer_3 = setInterval(function(){  
+        for(var i=0; i<aBannerImg.length; i++){
+            aBannerImg[i].className = '';
+        }      
+        aBannerImg[index+1].className = 'fade-in';     
+        if(index == aBannerImg.length-2){
+            aBannerImg[0].className = 'fade-in';
+        }   
+            index++;
+            index %= aBannerImg.length;// index不能无限自增
+            moveMent(oBannerImg, 'left', -58*index, 20000, function(){
+                dotStyle();
+            })
+        }, 3000);  
     }
+    autoSwitchImg();
 
     function prveImg(){
-        oBannerImg.style.left = aa + 'rem';
-       
+        for(var i=0; i<aBannerImg.length; i++){
+            aBannerImg[i].className = '';
+        }
+        aBannerImg[index-1].className = 'fade-in';
+        
+        clearInterval(timer_3);
+        if(index == 0){
+            index = aBannerImg.length-1;
+        }//如果页面一刷新默认索引为0，当点击上一张时，让其到最后一张
+        index--;
+        index %= aBannerImg.length;// index不能无限自增
+        moveMent(oBannerImg, 'left', -58*index, 20000, function(){
+            dotStyle();
+            autoSwitchImg();
+            //用户操作完成后，重新开始执行自动播放 
+        })
     }
-    function nextImg(){
-        oBannerImg.style.left = 0 + 'rem';     
+    function nextImg(){   
+        for(var i=0; i<aBannerImg.length; i++){
+            aBannerImg[i].className = '';
+        }      
+        aBannerImg[index+1].className = 'fade-in';
+        if(index == aBannerImg.length-2){
+            aBannerImg[0].className = 'fade-in';
+        }
+        clearInterval(timer_3);
+        if(index == aBannerImg.length-1){
+            index = 0;
+        }
+        index++;
+        index %= aBannerImg.length;// index不能无限自增
+        moveMent(oBannerImg, 'left', -58*index, 20000, function(){
+            dotStyle();
+            autoSwitchImg();
+            //用户操作完成后，重新开始执行自动播放 
+        }) 
+          
     }
+
+    //淡入淡出　
+    // function fadeIn(){
+    //     setOpacity(ele,0);
+        
+    //     for(var i = 0; i<20; i++){
+                       
+    //         (function(){
+    //             var opacityLevel = i * 5; 
+    //             setTimeout(() => {
+    //                 setOpacity(ele, opl)
+    //             }, 100);
+    //         })(i);
+    //     }
+    // }
+    
 
     init();
 })(document);
