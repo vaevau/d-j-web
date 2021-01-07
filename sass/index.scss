@@ -1424,24 +1424,28 @@ html {
     }
 
     .goods-switch-r {
-        width: 19rem;
-        height: 26rem;
+        width: 19rem;        
         position: relative;
         overflow: hidden;
     }
     .goods-switch-r .switch-pics {       
         display: flex;
-        position: absolute;
-        left: 0rem;
+        position: absolute;        
+        left: 0;       
+        transition: all .3s ease-in-out;
+        -webkit-transition: all .3s ease-in-out;
+        -moz-transition: all .3s ease-in-out;
+        -o-transition:all .3s ease-in-out;        
     }
     .goods-switch-r .switch-pics li {
-        width: 19rem;
+        width: 17rem;
         text-align: center;
-        margin-top: 3rem;
+        margin: 3rem 0 0 1rem;
+        margin-top: 3rem;       
     }
     .goods-switch-r .switch-pics li img {
         width: 12rem;
-        height: 12rem;
+        height: 12rem;        
     }
     .goods-switch-r .switch-pics li:hover img{
         opacity: 0.8;
@@ -1458,7 +1462,7 @@ html {
     }
     .goods-switch-r .switch-pics li>div {
         height: 10rem;
-        margin:  1rem auto;       
+        width: 17rem;      
         background:linear-gradient(180deg,rgba(255,255,255,.5),rgba(220,224,236,.5));
         background: -webkit-linear-gradient(180deg,rgba(255,255,255,.5),rgba(220,224,236,.5));
         background: -moz-linear-gradient(180deg,rgba(255,255,255,.5),rgba(220,224,236,.5));
@@ -1487,7 +1491,7 @@ html {
         display: flex;
         position: absolute;
         left: 42%;
-        bottom: 1rem;
+        bottom: 1.6rem;
     }
     .goods-switch-r .dot li {
         width: .4rem;
@@ -1502,7 +1506,6 @@ html {
     .goods-switch-r .dot .active {
         background-color: #e1251b;
     }
-
     .prv-next {
         position: relative;
         margin-top: -50%;

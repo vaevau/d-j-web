@@ -32,9 +32,16 @@
         oPrvBtn = doc.getElementById('J_prv_btn'),
         oNextBtn = doc.getElementById('J_next_btn'),
         m = 0,  aBnerDotLen = aBannerDot.length;
-    var init = function(){
-        bindEvent();
+        //商品秒杀块侧边切换
+    var oSliderWrapper = doc.getElementById('J_slider_wrapper'),
+        oSliderDot = doc.getElementById('J_slider_dot'),
+        aSliderLi = oSliderWrapper.querySelectorAll('li'),
+        aSliderDot = oSliderDot.querySelectorAll('li'),        
+        n = 0,  aSliderDotLen = aSliderDot.length;
         
+        
+    var init = function(){
+        bindEvent();        
     }
     function bindEvent(){  
         //显示隐藏，tab切换相关
@@ -82,7 +89,10 @@
             aBannerDot[m].idx = m;
             aBannerDot[m].addEventListener('mouseover', switchImg)
         }
-       
+        for(; n<aSliderDotLen; n++){
+            aSliderDot[n].idx = n;
+            aSliderDot[n].addEventListener('mouseover', sliderSwitchImg)
+        }  
     }
 
     // 事件委托
@@ -291,8 +301,7 @@
     function switchImg(){          
         clearInterval(timer_3);
          currentIdx = this.idx;
-         // 记录当前索引值，和上一次做比较
-     
+         // 记录当前索引值，和上一次做比较 
         console.log(currentIdx-index);
         for(var i=0; i<aBannerImg.length; i++){
             aBannerImg[i].className = '';
@@ -310,9 +319,9 @@
             oBannerImg.style.left = 0;
         }           
         //以上为淡入淡出相关判断        
-         index = this.idx;
-         
+         index = this.idx;         
          dotStyle();
+       
         // oBannerImg.style.left = -58*index + 'rem';
         moveMent(oBannerImg, 'left', -58*index, 20000, function(){
             autoSwitchImg();  
@@ -333,9 +342,9 @@
         }        
         addClass(aBannerDot[index], 'active');
     }
+
     var timer_3;
-    function autoSwitchImg(){ 
-                            
+    function autoSwitchImg(){                             
        timer_3 = setInterval(function(){  
         for(var i=0; i<aBannerImg.length; i++){
             aBannerImg[i].className = '';
@@ -389,25 +398,35 @@
             dotStyle();
             autoSwitchImg();
             //用户操作完成后，重新开始执行自动播放 
-        }) 
-          
+        })       
     }
-
-    //淡入淡出　
-    // function fadeIn(){
-    //     setOpacity(ele,0);
-        
-    //     for(var i = 0; i<20; i++){
-                       
-    //         (function(){
-    //             var opacityLevel = i * 5; 
-    //             setTimeout(() => {
-    //                 setOpacity(ele, opl)
-    //             }, 100);
-    //         })(i);
-    //     }
-    // }
     
+    
+    var index_2 = 0;
+    function sliderSwitchImg(){        
+        index_2 = this.idx;
+        circleDot();
+         moveMent(oSliderWrapper, 'left', -17*index_2, 10000, function(){
+            sliderAutoSwh();
+         })
+    }
+    function circleDot(){
+        for(var n = 0;  n < aSliderDotLen; n++){
+            aSliderDot[n].className = '';
+        }        
+        addClass(aSliderDot[index_2], 'active');
+    }
+    var timer_4;
+    function sliderAutoSwh(){        
+        timer_4 = setInterval(function(){
+        index_2++;
+        index_2 %= aSliderLi.length;
+      moveMent(oSliderWrapper, 'left', -17*index_2, 10000, function(){
+                circleDot();           
+            })
+         }, 3000)
+    }
+    sliderAutoSwh();
 
     init();
 })(document);
