@@ -39,7 +39,21 @@
         aSliderDot = oSliderDot.querySelectorAll('li'),        
         n = 0,  aSliderDotLen = aSliderDot.length;
         
+        //新品首发
+    var oNewGoodsBox = doc.getElementById('J_new_goods_banner'),
+        oPrvBtnGoods = doc.getElementById('J_prv_btn_goods'),
+        oNextBtnGoods = doc.getElementById('J_next_btn_goods'),
+        aNewGoodsLi = oNewGoodsBox.querySelectorAll('li'),
+        o = 0, aNewGdsLiLen = aNewGoodsLi.length;
+
+        //发现好货 无缝滚动
+    var oSeamlesRoll = doc.getElementById('J_semaless_rolling'),
+        aRollingLi = oSeamlesRoll.getElementsByTagName('li');
         
+        //无缝滚动 底部滑块
+    var oRollBar = doc.getElementById('J_rolling_bar'),
+        oTheSlider = doc.getElementById('J_the_slider');
+
     var init = function(){
         bindEvent();        
     }
@@ -89,10 +103,19 @@
             aBannerDot[m].idx = m;
             aBannerDot[m].addEventListener('mouseover', switchImg)
         }
+        //商品秒杀块侧边切换
         for(; n<aSliderDotLen; n++){
             aSliderDot[n].idx = n;
             aSliderDot[n].addEventListener('mouseover', sliderSwitchImg)
-        }  
+        }
+        
+        //无缝滚动
+        oSeamlesRoll.addEventListener('mouseover', clearRoll);
+        oSeamlesRoll.addEventListener('mouseout', recoverRoll);
+
+        ////无缝滚动 底部滑块
+        oTheSlider.addEventListener('mousedown', theSliderDown)
+        oTheSlider.addEventListener('mouseup', theSliderUp)
     }
 
     // 事件委托
@@ -200,7 +223,6 @@
      function changeTxt(e){
          e = e || window.e;
        var  eTget = e.target || e.srcElement;
-       console.log(e);
          if(eTget.tagName.toUpperCase() === 'LI' ){
          }else if(eTget.tagName.toUpperCase() === 'SPAN'){
              eTget.innerHTML = '立即删除';
@@ -302,7 +324,6 @@
         clearInterval(timer_3);
          currentIdx = this.idx;
          // 记录当前索引值，和上一次做比较 
-        console.log(currentIdx-index);
         for(var i=0; i<aBannerImg.length; i++){
             aBannerImg[i].className = '';
         }      
@@ -358,7 +379,7 @@
             moveMent(oBannerImg, 'left', -58*index, 20000, function(){
                 dotStyle();
             })
-        }, 3000);  
+        }, 5000);  
     }
     autoSwitchImg();
 
@@ -401,7 +422,7 @@
         })       
     }
     
-    
+    //商品秒杀块侧边切换
     var index_2 = 0;
     function sliderSwitchImg(){        
         index_2 = this.idx;
@@ -428,6 +449,62 @@
     }
     sliderAutoSwh();
 
+    // 发现好货 无缝滚动
+    var roll_timer=null;
+  
+        oSeamlesRoll.innerHTML += oSeamlesRoll.innerHTML; 
+        oSeamlesRoll.style.width = aRollingLi[0].offsetWidth*aRollingLi.length;
+        
+       roll_timer = setInterval(function(){             
+            rollSpeed  = 40;  
+            oSeamlesRoll.offsetLeft = 0; 
+            //防止抖动，js不能准确表达小数点  
+            console.log(oSeamlesRoll.offsetLeft) 
+           oSeamlesRoll.style.left = oSeamlesRoll.offsetLeft + rollSpeed + 'px';
+            // moveMent(oSeamlesRoll, 'left', rollSpeed, 10000, function(){});   
+            if(oSeamlesRoll.offsetLeft < -parseInt(oSeamlesRoll.offsetWidth/2)){
+                oSeamlesRoll.style.left = 42 + 'px';
+                
+            }else if(oSeamlesRoll.offsetLeft > 0){
+                oSeamlesRoll.style.left = -oSeamlesRoll.offsetWidth/2 + 'px';
+            }                                     
+        }, 50)                      
+   
+    function clearRoll(){
+        clearInterval(roll_timer)
+    }
+    function recoverRoll(){
+        roll_timer = setInterval(function(){             
+            rollSpeed  = 40;  
+            oSeamlesRoll.offsetLeft = 0; 
+            //防止抖动，js不能准确表达小数点  
+            console.log(oSeamlesRoll.offsetLeft) 
+           oSeamlesRoll.style.left = oSeamlesRoll.offsetLeft + rollSpeed + 'px';
+            // moveMent(oSeamlesRoll, 'left', rollSpeed, 10000, function(){});   
+            if(oSeamlesRoll.offsetLeft < -parseInt(oSeamlesRoll.offsetWidth/2)){
+                oSeamlesRoll.style.left = 42 + 'px';
+                
+            }else if(oSeamlesRoll.offsetLeft > 0){
+                oSeamlesRoll.style.left = -oSeamlesRoll.offsetWidth/2 + 'px';
+            }                                     
+        }, 50) 
+    }
+
+    //无缝滚动 底部滑块
+    //按下鼠标触发，如果向右边拖动，内容往左。
+    function theSliderDown(){
+        // document.write('anxia')
+    }
+    function theSliderUp(){
+        document.write('taiqi')
+    }
+
+
+
+    //新品首发
+    // function NewGdsTab(){
+
+    // }
     init();
 })(document);
 

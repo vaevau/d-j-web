@@ -777,10 +777,6 @@ html {
     .img-ls {
        position: absolute;
        left: 0rem;
-       transition: all .3s ease-in-out;
-    -webkit-transition: all .3s ease-in-out;
-    -moz-transition: all .3s ease-in-out;
-    -o-transition:all .3s ease-in-out;
     }
    
     .img-ls li{
@@ -1431,11 +1427,7 @@ html {
     .goods-switch-r .switch-pics {       
         display: flex;
         position: absolute;        
-        left: 0;       
-        transition: all .3s ease-in-out;
-        -webkit-transition: all .3s ease-in-out;
-        -moz-transition: all .3s ease-in-out;
-        -o-transition:all .3s ease-in-out;        
+        left: 0;              
     }
     .goods-switch-r .switch-pics li {
         width: 17rem;
@@ -1955,6 +1947,7 @@ ins {
         width: 80%;
         overflow: hidden;
         background-color: #fff;
+        position: relative;
     }
 }
 
@@ -1997,30 +1990,32 @@ ins {
 }
 
 .find-goods-ls {
-
     ul {     
         margin: 2rem 0 0 -4.2rem;
         display: flex;
         justify-content: space-between;
+        position: absolute;
+        left: 0;  
     }
-    li {         
-        width: 15rem;
-        margin-left: 5.6rem;
+    li {     
+        display: flex;   
+        width: 80rem;
+        margin-left: 5rem;
+        position: relative;
+        left: 0;
+    }
+    li a {
+        display: block;       
+        margin-right: 5.6rem;
+    }
+    li .even-item {
+        margin-top: 4.6rem;
     }
     li:hover img{
         opacity: .8;
         filter: alpha(opacity=80);
     }
-    li:nth-child(even)>a {
-        display: block;
-        margin-top: 5rem;
-     }
-     li:nth-child(odd)>a p {
-        margin-top: 1rem;
-     }
-     li:nth-child(even)>a div {
-        margin-top: 1rem;
-     }
+  
      li div {
         width: 15rem;
         height: 15rem; 
@@ -2045,7 +2040,23 @@ ins {
 
 }
 
-
+.rolling-bar {
+    position: absolute;
+    width: 96%;
+    height: .6rem;
+    left: 2%;
+    bottom: 1rem;
+    background-color: #f5f5f5;
+}
+.rolling-bar .the-slider {
+    width:6rem;
+    height: 1.2rem;
+    background: #ccc;
+    border-radius: .5rem;
+    position: absolute;
+    left: 47%;
+    margin-top: -.2rem;
+}
 // 新品首发 
 .box-block {
     display: flex;
@@ -2093,27 +2104,34 @@ ins {
 }
 .box-mid {
     position: relative;
+    width: 24.2rem;
+    height: 23rem;
     overflow: hidden;
-    ul {
+   #J_new_goods_banner  {
         display: flex;
-        justify-content: space-between; 
-        align-items: flex-end; 
+        justify-content: center; 
+        align-items: center;
+        position: relative;
+        width: 24.2rem;
+        left: 0rem;                  
     }
-    ul li:first-child, ul li:nth-child(3) {
+    #J_new_goods_banner li {
         width: 9rem;
         height: 9rem;
+        flex-shrink: 0;
+        align-self: center;
     }
-    ul li:first-child {        
-        margin-left: -5.6rem;        
+  
+    #J_new_goods_banner .goods-item2 {
+        margin-left: 3.6rem;
     }
-    ul li:nth-child(3) {
-        margin-left: 2rem;
+    #J_new_goods_banner .goods-item4 {
+        margin-left: 3rem;
     }
-    ul li {
+    #J_new_goods_banner .current-goods-pic {
         width: 12rem;
         height: 12rem;
-        margin-left: 1rem;
-        flex-shrink: 0;
+        position: absolute;
     }
     ul li:hover img {
         opacity: .8;
@@ -2123,25 +2141,13 @@ ins {
         width: 100%;
         height: 100%;
     }
-   .goods-item2 {          
-        flex-shrink: 0;
-    }   
-
-    .prv-next  .prv {
-        position: absolute;
-        left: 5rem; 
-        bottom: -2rem;
-    }
-    .prv-next .next {
-        position: absolute;
-        left: 20rem;
-        bottom: -5rem;  
+    .prv-next   {
+        margin-top: -15rem;        
     } 
-    
 }
 .box-footer {
     padding-bottom: 1.4rem;
-    margin-top: 2rem;
+    margin-top: 19.6rem;
     text-align: center;
     >div {
         display: none;

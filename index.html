@@ -3615,7 +3615,7 @@
         <!-- main 正中间轮播图 -->
             <div class="main-m">
                 <div class="banner">
-                    <ul class="img-ls" id="J_banner_img">
+                    <ul class="img-ls banner-transition" id="J_banner_img">
                         <li class="fade-in"><a href="#;"><img src="img/pic01-banner.jpg" alt=""></a></li>
                         <li><a href="#"><img src="img/pic02-banner.jpg" alt=""></a></li>
                         <li><a href="#"><img src="img/pic03-banner.jpg" alt=""></a></li>
@@ -3947,7 +3947,7 @@
                 </ul>
             </div>
             <div class="goods-switch-r">
-                <ul class="switch-pics" id="J_slider_wrapper">
+                <ul class="switch-pics banner-transition" id="J_slider_wrapper">
                     <li>
                         <a href="#"><img class="hover-opacity" src="img/pic4-secondskill.jpg" alt="" /></a>
                         <div>
@@ -4260,68 +4260,46 @@
                 </div>
             </section>
             <div class="find-goods-ls">
-                <ul>
+                <ul id="J_semaless_rolling">
                     <li>
-                        <a href="#">
+                        <a href="#" class="even-item">
                             <div><img src="img/pics/pic1-find-goods.jpg" alt="" /></div>
                             <p>皇驰 智能遥控 车位锁</p>
                         </a>
-                    </li>
-                    <li>
-                        <a href="">
+                        <a href="" class="odd-item">
                             <p>华为 超薄 笔记本电脑</p>
                              <div> <img src="img/pics/pic2-find-goods.jpg" alt="" /> </div>
                         </a>
-                    </li>
+                        <a href="" class="even-item">
+                            <div><img src="img/pics/pic3-find-goods.jpg" alt="" /></div>
+                           <p>LG 线性变频 节能对开门冰箱</p>
+                       </a>
+                       <a href="" class="odd-item">
+                        <p>酷睿i9 蝎子主体 星灵电脑主机</p>
+                          <div> <img src="img/pics/pic4-find-goods.jpg" alt="" /></div>
+                     </a>
+                    </li>                 
                     <li>
-                        <a href="">
-                             <div><img src="img/pics/pic3-find-goods.jpg" alt="" /></div>
-                            <p>LG 线性变频 节能对开门冰箱</p>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="">
-                           <p>酷睿i9 蝎子主体 星灵电脑主机</p>
-                             <div> <img src="img/pics/pic4-find-goods.jpg" alt="" /></div>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="">
+                        <a href="" class="even-item">
                              <div><img src="img/pics/pic5-find-goods.jpg" alt="" /></div>
                            <p>徕卡 快速对焦 数码相机</p>
                         </a>
-                    </li>
-                    <li>
-                        <a href="">
+                        <a href="" class="odd-item">
                             <p>嘉丁拿 可伸缩 高空修枝剪</p>
                              <div> <img src="img/pics/pic6-find-goods.jpg" alt="" /></div>
                         </a>
-                    </li>
-                    <li>
-                        <a href="">
-                             <div><img src="img/pics/pic7-find-goods.jpg" alt="" /></div>
-                           <p>佳奥 魔术贴设计 靠垫</p>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="">
-                            <p>外星人 RTX2080 电竞游戏笔记本</p>
-                             <div><img src="img/pics/pic8-find-goods.jpg" alt="" /></div>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="">
-                             <div><img src="img/pics/pic9-find-goods.jpg" alt="" /></div>
-                            <p>GUCCI 半框豹纹 眼镜架</p>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="">
-                            <p>新秀丽 拉链竖款 钱包</p>
-                             <div><img src="img/pics/pic10-find-goods.jpg" alt="" /></div>
-                        </a>
-                    </li>
+                        <a href="" class="even-item">
+                            <div><img src="img/pics/pic7-find-goods.jpg" alt="" /></div>
+                          <p>佳奥 魔术贴设计 靠垫</p>
+                       </a>
+                       <a href="" class="odd-item">
+                        <p>外星人 RTX2080 电竞游戏笔记本</p>
+                         <div><img src="img/pics/pic8-find-goods.jpg" alt="" /></div>
+                    </a>                                   
                 </ul>
+                <div class="rolling-bar" id="J_rolling_bar">
+                    <div class="the-slider" id="J_the_slider"></div>
+                </div>
             </div>
         </div>
 
@@ -4330,43 +4308,44 @@
             <div class="new-goods box">
                 <a href="#"><h1>新品首发<i class="fa fa-angle-right hover-opacity"aria-hidden="true"></i></h1></a>
                 <div class="box-mid">
-                    <ul>
+                    <ul id="J_new_goods_banner">
                         <li class="goods-item1"><a href="#"><img src="img/pics/pic2-new-goods.jpg" alt="" /></a></li>
                         <li class="goods-item2"><a href="#"><img src="img/pics/pic1-new-goods.jpg" alt="" /></a></li>
-                        <li class="goods-item3"><a href="#"><img src="img/pics/pic3-new-goods.jpg" alt="" /></a></li>
-                        <li class="goods-item4"><a href="#"><img src="img/pics/pic4-new-goods.jpg" alt="" /></a></li>
+                        <li class="goods-item3 current-goods-pic"><a href="#"><img src="img/pics/pic3-new-goods.jpg" alt="" /></a></li>
+                        <li class="goods-item4 "><a href="#"><img src="img/pics/pic4-new-goods.jpg" alt="" /></a></li>
                     </ul>  
                     <ul class="prv-next">
-                        <li class="prv"><i class="fa fa-angle-left hover-opacity" aria-hidden="true"></i></li>
-                        <li class="next"><i class="fa fa-angle-right hover-opacity" aria-hidden="true"></i></li>
+                        <li class="prv" id="J_prv_btn_goods"><i class="fa fa-angle-left hover-opacity" aria-hidden="true"></i></li>
+                        <li class="next" id="J_next_btn_goods"><i class="fa fa-angle-right hover-opacity" aria-hidden="true"></i></li>
                     </ul>
+                    <div class="box-footer">
+                        <div class="goods-one-footer ">
+                            <h3><a href="#">
+                                华为 HUAWEI Mate Xs 5G麒麟990</a></h3>
+                            <span>来这里发现更多新品</span>
+                            <p><strong>￥16999.00起</strong></p>
+                        </div>
+                        <div class="goods-two-footer ">
+                            <h3><a href="#">
+                                360儿童电话手表9X 智能语音问答定位支付手表 4G全网通20米游</a></h3>
+                            <span>来这里发现更多新品</span>
+                            <p><strong>￥499.00起</strong></p>
+                        </div>
+                        <div class="goods-three-footer show">
+                            <h3><a href="#">
+                                森海塞尔（Sennheiser）MOMENTUM 真无线二代蓝牙主动降噪运动耳机</a></h3>
+                            <span>来这里发现更多新品</span>
+                            <p><strong>￥2399.00起</strong></p>
+                        </div>
+                        <div class="goods-four-footer">
+                            <h3><a href="#">
+                                创维 酷开智慧屏 P50 55英寸4K超高清 光学防蓝光</a></h3>
+                            <span>来这里发现更多新品</span>
+                            <p><strong>￥2399.00起</strong></p>
+                        </div>
+                    </div>
                 </div>
-                <div class="box-footer">
-                    <div class="goods-one-footer ">
-                        <h3><a href="#">
-                            华为 HUAWEI Mate Xs 5G麒麟990</a></h3>
-                        <span>来这里发现更多新品</span>
-                        <p><strong>￥16999.00起</strong></p>
-                    </div>
-                    <div class="goods-two-footer ">
-                        <h3><a href="#">
-                            360儿童电话手表9X 智能语音问答定位支付手表 4G全网通20米游</a></h3>
-                        <span>来这里发现更多新品</span>
-                        <p><strong>￥499.00起</strong></p>
-                    </div>
-                    <div class="goods-three-footer show">
-                        <h3><a href="#">
-                            森海塞尔（Sennheiser）MOMENTUM 真无线二代蓝牙主动降噪运动耳机</a></h3>
-                        <span>来这里发现更多新品</span>
-                        <p><strong>￥2399.00起</strong></p>
-                    </div>
-                    <div class="goods-four-footer">
-                        <h3><a href="#">
-                            创维 酷开智慧屏 P50 55英寸4K超高清 光学防蓝光</a></h3>
-                        <span>来这里发现更多新品</span>
-                        <p><strong>￥2399.00起</strong></p>
-                    </div>
-                </div>
+              
             
             </div>
                 <!-- 排行榜 -->
