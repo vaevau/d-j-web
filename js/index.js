@@ -48,6 +48,7 @@
 
         //发现好货 无缝滚动
     var oSeamlesRoll = doc.getElementById('J_semaless_rolling'),
+        oRollGoodsLs = doc.getElementById('J_rolling-goods-ls'),
         aRollingLi = oSeamlesRoll.getElementsByTagName('li');
         
         //无缝滚动 底部滑块
@@ -110,12 +111,12 @@
         }
         
         //无缝滚动
-        oSeamlesRoll.addEventListener('mouseover', clearRoll);
-        oSeamlesRoll.addEventListener('mouseout', recoverRoll);
+        oRollGoodsLs.addEventListener('mouseover', clearRoll);
+        oRollGoodsLs.addEventListener('mouseout', recoverRoll);
 
         ////无缝滚动 底部滑块
-        oTheSlider.addEventListener('mousedown', theSliderDown)
-        oTheSlider.addEventListener('mouseup', theSliderUp)
+        // oTheSlider.addEventListener('mousedown', theSliderDown)
+        // oTheSlider.addEventListener('mouseup', theSliderUp)
     }
 
     // 事件委托
@@ -450,54 +451,75 @@
     sliderAutoSwh();
 
     // 发现好货 无缝滚动
-    var roll_timer=null;
-  
+    function rolling(){        
+        oSeamlesRoll.style.left = oSeamlesRoll.offsetLeft + rollSpeed + 'px';
+            // moveMent(oSeamlesRoll, 'left', rollSpeed, 10000, function(){});   
+            if(oSeamlesRoll.offsetLeft < -parseInt(oSeamlesRoll.offsetWidth/2)){
+                oSeamlesRoll.style.left = 0 + 'px';
+                
+            }else if(oSeamlesRoll.offsetLeft > 0){
+                oSeamlesRoll.style.left = -oSeamlesRoll.offsetWidth/2 + 'px';
+            }
+    }
+    var roll_timer=null;  
         oSeamlesRoll.innerHTML += oSeamlesRoll.innerHTML; 
         oSeamlesRoll.style.width = aRollingLi[0].offsetWidth*aRollingLi.length;
         
-       roll_timer = setInterval(function(){             
-            rollSpeed  = 40;  
-            oSeamlesRoll.offsetLeft = 0; 
-            //防止抖动，js不能准确表达小数点  
-            console.log(oSeamlesRoll.offsetLeft) 
-           oSeamlesRoll.style.left = oSeamlesRoll.offsetLeft + rollSpeed + 'px';
-            // moveMent(oSeamlesRoll, 'left', rollSpeed, 10000, function(){});   
-            if(oSeamlesRoll.offsetLeft < -parseInt(oSeamlesRoll.offsetWidth/2)){
-                oSeamlesRoll.style.left = 42 + 'px';
-                
-            }else if(oSeamlesRoll.offsetLeft > 0){
-                oSeamlesRoll.style.left = -oSeamlesRoll.offsetWidth/2 + 'px';
-            }                                     
+       roll_timer = setInterval(function(){   
+            rollSpeed  = -3;                         
+            rolling();                                   
         }, 50)                      
    
     function clearRoll(){
-        clearInterval(roll_timer)
+        clearInterval(roll_timer);        
     }
     function recoverRoll(){
-        roll_timer = setInterval(function(){             
-            rollSpeed  = 40;  
-            oSeamlesRoll.offsetLeft = 0; 
-            //防止抖动，js不能准确表达小数点  
-            console.log(oSeamlesRoll.offsetLeft) 
-           oSeamlesRoll.style.left = oSeamlesRoll.offsetLeft + rollSpeed + 'px';
-            // moveMent(oSeamlesRoll, 'left', rollSpeed, 10000, function(){});   
-            if(oSeamlesRoll.offsetLeft < -parseInt(oSeamlesRoll.offsetWidth/2)){
-                oSeamlesRoll.style.left = 42 + 'px';
-                
-            }else if(oSeamlesRoll.offsetLeft > 0){
-                oSeamlesRoll.style.left = -oSeamlesRoll.offsetWidth/2 + 'px';
-            }                                     
+        roll_timer = setInterval(function(){  
+            rollSpeed  = -3;           
+            rolling();
         }, 50) 
     }
 
-    //无缝滚动 底部滑块
-    //按下鼠标触发，如果向右边拖动，内容往左。
-    function theSliderDown(){
-        // document.write('anxia')
-    }
-    function theSliderUp(){
-        document.write('taiqi')
-    }
+    //计算容器的offsetLeft 
+    var oRollBarLeft = oRollBar.offsetLeft,
+    //计算相对于容器的边界
+        leftMin = 0,
+        leftMax = oRollBar.clientWidth - oTheSlider.clientWidth;
+    
+        oTheSlider.onmousedown = function(e){
+            e = e || window.e;
+            //计算滑块初始位置 
+            startX = oTheSlider.offsetLeft;           
+            doc.onmousemove = function(e){
+              e = e || window.e;
+              //计算滑块最后位置  
+                endX = oTheSlider.offsetLeft;  
+                x = endX - startX;                
+               if(x > 0 ){                             
+                rollSpeed  = -10;             
+                rolling();               
+            } else if(x < 0){                              
+                rollSpeed  = 10;             
+                rolling();
+               }           
+              //计算鼠标相对于容器最小边界的距离
+               var mouseLeft = e.clientX - oRollBarLeft;
+                //限定鼠标范围内可拖动 
+               var  mouseLeft = Math.min(Math.max(leftMin, mouseLeft), leftMax); 
+                //设置鼠标拖动的距离为滑块的left偏移量
+                oTheSlider.style.left = mouseLeft + 'px';
+            }
+            doc.onmouseup = function(){
+                endX = oTheSlider.offsetLeft;
+                
+                //当鼠标抬起，设置当前位置为滑块的位置
+                doc.onmousedown = null;
+                doc.onmousemove = null;
+            }  
+        }
+    
+    
+        
 
 
 
@@ -505,6 +527,10 @@
     // function NewGdsTab(){
 
     // }
+
+    doc.onselectstart = function(){
+        return false;
+    }
     init();
 })(document);
 

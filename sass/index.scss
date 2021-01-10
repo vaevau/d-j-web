@@ -1934,7 +1934,7 @@ ins {
 .find-goods-block {
     display: flex;
     justify-content: space-between;
-    height: 26rem;
+    height: 27rem;
     margin-top: 2rem;
     .find-goods-posters {
         width: 19%;
@@ -1944,10 +1944,9 @@ ins {
         overflow: hidden;
     }
     .find-goods-ls {
-        width: 80%;
-        overflow: hidden;
-        background-color: #fff;
-        position: relative;
+        width: 80rem;
+       overflow: hidden;
+       background-color: #fff;
     }
 }
 
@@ -1990,12 +1989,17 @@ ins {
 }
 
 .find-goods-ls {
+    .semaless-rolling-wrapper {
+        position: relative;
+    }
     ul {     
-        margin: 2rem 0 0 -4.2rem;
+        height: 100%;
+        margin: 2rem 0 0 0;
         display: flex;
         justify-content: space-between;
         position: absolute;
         left: 0;  
+        height: 26rem;
     }
     li {     
         display: flex;   
@@ -2037,26 +2041,35 @@ ins {
         text-overflow: ellipsis;
         font-family:'Microsoft YaHei' "\5B8B\4F53";
     }
-
+}
+.find-goods-ls:hover .rolling-bar{
+    opacity: 1 !important;
+    filter: alpha(opacity=100) !important;
 }
 
-.rolling-bar {
-    position: absolute;
-    width: 96%;
-    height: .6rem;
-    left: 2%;
-    bottom: 1rem;
+#J_rolling_bar {
+    position: relative;
+    width: 78rem;
+    height: .4rem;
+    left: 1rem;
+    top: 25.6rem;
     background-color: #f5f5f5;
+    border-radius: .3rem;
+    opacity: 0;
+    filter: alpha(opacity=0);
 }
-.rolling-bar .the-slider {
-    width:6rem;
-    height: 1.2rem;
+
+#J_the_slider {
+    width:8rem;
+    height: 1rem;
+    position: absolute;
+    left: 35rem;
+    top: -.3rem;
     background: #ccc;
     border-radius: .5rem;
-    position: absolute;
-    left: 47%;
-    margin-top: -.2rem;
 }
+
+
 // 新品首发 
 .box-block {
     display: flex;
