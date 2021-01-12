@@ -2126,25 +2126,18 @@ ins {
         align-items: center;
         position: relative;
         width: 24.2rem;
-        left: 0rem;                  
+        margin-left: 30rem;
+        left: 0;                  
     }
     #J_new_goods_banner li {
-        width: 9rem;
-        height: 9rem;
-        flex-shrink: 0;
-        align-self: center;
-    }
-  
-    #J_new_goods_banner .goods-item2 {
-        margin-left: 3.6rem;
-    }
-    #J_new_goods_banner .goods-item4 {
-        margin-left: 3rem;
-    }
-    #J_new_goods_banner .current-goods-pic {
         width: 12rem;
         height: 12rem;
-        position: absolute;
+        flex-shrink: 0;
+        transform: scale(.8);
+        align-self: center;
+    } 
+    #J_new_goods_banner .current-goods-pic {
+        transform: scale(1);
     }
     ul li:hover img {
         opacity: .8;
@@ -2155,15 +2148,15 @@ ins {
         height: 100%;
     }
     .prv-next   {
-        margin-top: -15rem;        
+        margin-top: -16rem;        
     } 
 }
-.box-footer {
-    padding-bottom: 1.4rem;
-    margin-top: 19.6rem;
+.box-footer {    
+    margin-top: 18rem;
     text-align: center;
     >div {
         display: none;
+       
     }
     >div:hover h3 a {
         color: #b91c29;
@@ -2187,11 +2180,10 @@ ins {
         display: inline-block;
         color: #999;
         font-size: 1.2rem;
-        padding-top: .4rem;
     }
     strong {
         display: inline-block;
-        padding-top: 1rem;
+        padding-top: .4rem;
         margin-left: -1.8rem;
         font-weight: normal;
         font-size: 1.8rem;

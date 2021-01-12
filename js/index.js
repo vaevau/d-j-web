@@ -11,8 +11,6 @@
                            cateLkLen = aCateLk.length,
                            cateLsLen = aCateLs.length;
 
-    
-
     //搜索框相关　
     var inputVal = ['芭比娃娃','哇哈哈','机械键盘','内裤','电脑免费租','格力变频空调','办公椅','500G硬盘'],
         lkTxtVal = ['超市购好物','家电超级五','苹果免息购','工业年末庆'],
@@ -44,7 +42,9 @@
         oPrvBtnGoods = doc.getElementById('J_prv_btn_goods'),
         oNextBtnGoods = doc.getElementById('J_next_btn_goods'),
         aNewGoodsLi = oNewGoodsBox.querySelectorAll('li'),
-        o = 0, aNewGdsLiLen = aNewGoodsLi.length;
+        oDivGoodsInfo = doc.getElementById('J_goods-info-footer'),
+        aDivGoodsInfo = oDivGoodsInfo.getElementsByTagName('div');
+        
 
         //发现好货 无缝滚动
     var oSeamlesRoll = doc.getElementById('J_semaless_rolling'),
@@ -55,9 +55,12 @@
     var oRollBar = doc.getElementById('J_rolling_bar'),
         oTheSlider = doc.getElementById('J_the_slider');
 
+
     var init = function(){
         bindEvent();        
     }
+
+    
     function bindEvent(){  
         //显示隐藏，tab切换相关
         oCurntPlace.addEventListener('mouseover', show, false);
@@ -108,15 +111,14 @@
         for(; n<aSliderDotLen; n++){
             aSliderDot[n].idx = n;
             aSliderDot[n].addEventListener('mouseover', sliderSwitchImg)
-        }
-        
+        }        
         //无缝滚动
         oRollGoodsLs.addEventListener('mouseover', clearRoll);
         oRollGoodsLs.addEventListener('mouseout', recoverRoll);
 
-        ////无缝滚动 底部滑块
-        // oTheSlider.addEventListener('mousedown', theSliderDown)
-        // oTheSlider.addEventListener('mouseup', theSliderUp)
+        //新品首发
+        oPrvBtnGoods.addEventListener('click', prevCardImg);
+        oNextBtnGoods.addEventListener('click', nextCardImg);
     }
 
     // 事件委托
@@ -466,7 +468,7 @@
         oSeamlesRoll.style.width = aRollingLi[0].offsetWidth*aRollingLi.length;
         
        roll_timer = setInterval(function(){   
-            rollSpeed  = -3;                         
+            rollSpeed  = -2;                         
             rolling();                                   
         }, 50)                      
    
@@ -475,7 +477,7 @@
     }
     function recoverRoll(){
         roll_timer = setInterval(function(){  
-            rollSpeed  = -3;           
+            rollSpeed  = -2;           
             rolling();
         }, 50) 
     }
@@ -517,20 +519,67 @@
                 doc.onmousemove = null;
             }  
         }
-    
-    
+
+    //新品首发 
+
+    var oRmClass = doc.getElementById('J_rm_class'),
+        oRmShow = doc.getElementById('J_rm_show'),
         
-
-
-
-    //新品首发
-    // function NewGdsTab(){
-
-    // }
-
+        currentIdx = 1,
+        switchLeft = -420;  
+        cardBanner_timer = null;
+    function switchCardBanner(){
+        currentIdx++;                  
+       oNewGoodsBox.style.left = oNewGoodsBox.offsetLeft + switchLeft + 'px';
+       rmClass(aNewGoodsLi[currentIdx-1], 'current-goods-pic');
+       addClass(aNewGoodsLi[currentIdx], 'current-goods-pic');
+       rmClass(aDivGoodsInfo[currentIdx-1], 'show');
+       addClass(aDivGoodsInfo[currentIdx], 'show');                  
+       if(parseInt(oNewGoodsBox.style.left) < -360){
+           rmClass(oNewGoodsBox, 'hover-opacity');
+            oNewGoodsBox.style.left = 0;            
+            moveMent(oNewGoodsBox, 'left', 0, 10000, function(){})
+            currentIdx = 1;                     
+            addClass(aNewGoodsLi[currentIdx], 'current-goods-pic');
+            addClass(aDivGoodsInfo[currentIdx], 'show');                        
+            rmClass(oRmClass, 'current-goods-pic');
+            rmClass(oRmShow, 'show');
+            addClass(oNewGoodsBox, 'hover-opacity');        
+       }       
+    }         
+    cardBanner_timer = setInterval(function(){                    
+        switchCardBanner();
+    },4000)
+    
+    
+    function prevCardImg(){
+        clearInterval(cardBanner_timer);         
+        switchLeft = 180; 
+        rmClass(aDivGoodsInfo[currentIdx], 'show');
+        oNewGoodsBox.style.left = oNewGoodsBox.offsetLeft - switchLeft + 'px';   
+        if(currentIdx === 1){            
+            oNewGoodsBox.style.left = -360 + 'px';
+            currentIdx = 5;             
+        }
+        currentIdx--;
+            addClass(aNewGoodsLi[currentIdx], 'current-goods-pic');
+            rmClass(aNewGoodsLi[currentIdx+1], 'current-goods-pic');
+            rmClass(aNewGoodsLi[currentIdx-1], 'current-goods-pic');
+            addClass(aDivGoodsInfo[currentIdx], 'show');
+            rmClass(aDivGoodsInfo[currentIdx+1], 'show');
+            rmClass(aDivGoodsInfo[currentIdx-1], 'show');            
+            cardBanner_timer = setInterval(prevCardImg, 4000);
+    }
+    function nextCardImg(){
+        clearInterval(cardBanner_timer);
+        switchCardBanner();
+        cardBanner_timer = setInterval(switchCardBanner, 4000);
+    }
+  
     doc.onselectstart = function(){
         return false;
     }
+    //阻止页面元素被选中
     init();
 })(document);
 
