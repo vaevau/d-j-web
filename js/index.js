@@ -55,12 +55,18 @@
     var oRollBar = doc.getElementById('J_rolling_bar'),
         oTheSlider = doc.getElementById('J_the_slider');
 
+    //优惠倒计时
+    var oCountDownPeriod = doc.getElementById('J_countdown_period'),
+        oHour = doc.getElementById('J_hour'),
+        oMinute = doc.getElementById('J_mitnute'),
+        oSeconds = doc.getElementById('J_seconds');
+
+
 
     var init = function(){
         bindEvent();        
     }
 
-    
     function bindEvent(){  
         //显示隐藏，tab切换相关
         oCurntPlace.addEventListener('mouseover', show, false);
@@ -521,7 +527,6 @@
         }
 
     //新品首发 
-
     var oRmClass = doc.getElementById('J_rm_class'),
         oRmShow = doc.getElementById('J_rm_show'),
         
@@ -576,6 +581,50 @@
         cardBanner_timer = setInterval(switchCardBanner, 4000);
     }
   
+    //优惠倒计时
+    var oDate = new Date(),
+        oH = oDate.getHours(),
+        oM = oDate.getMinutes(),
+        oS = oDate.getSeconds();
+    switch (oH) {
+        case 8: 
+        oCountDownPeriod.innerHTML = '08:00';     
+        break;
+        case 10: 
+        oCountDownPeriod.innerHTML = '10:00';     
+        break;
+        case 12: 
+        oCountDownPeriod.innerHTML = '12:00';     
+        break;
+        case 14: 
+        oCountDownPeriod.innerHTML = '14:00';     
+        break;case 16: 
+        oCountDownPeriod.innerHTML = '16:00';     
+        break;
+        case 18: 
+        oCountDownPeriod.innerHTML = '18:00';     
+        break;
+        case 20: 
+        oCountDownPeriod.innerHTML = '20:00';     
+        break;
+        case 22: 
+        oCountDownPeriod.innerHTML = '22:00';     
+        break;
+    }
+     setInterval(function(){
+        oSeconds.innerHTML -= 1; 
+        oMinute.innerHTML = 60-oM;
+        if(oSeconds.innerHTML == 0){
+            oSeconds.innerHTML = 60;
+            oMinute.innerHTML -= 1;
+            if(oMinute.innerHTML == 0){
+                oHour -= 1;
+            }
+        }
+     }, 1000)
+
+
+
     doc.onselectstart = function(){
         return false;
     }
