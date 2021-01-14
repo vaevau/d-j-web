@@ -582,46 +582,42 @@
     }
   
     //优惠倒计时
-    var oDate = new Date(),
+    function countDown(){
+        var oDate = new Date(),
         oH = oDate.getHours(),
         oM = oDate.getMinutes(),
         oS = oDate.getSeconds();
-    switch (oH) {
-        case 8: 
-        oCountDownPeriod.innerHTML = '08:00';     
-        break;
-        case 10: 
-        oCountDownPeriod.innerHTML = '10:00';     
-        break;
-        case 12: 
-        oCountDownPeriod.innerHTML = '12:00';     
-        break;
-        case 14: 
-        oCountDownPeriod.innerHTML = '14:00';     
-        break;case 16: 
-        oCountDownPeriod.innerHTML = '16:00';     
-        break;
-        case 18: 
-        oCountDownPeriod.innerHTML = '18:00';     
-        break;
-        case 20: 
-        oCountDownPeriod.innerHTML = '20:00';     
-        break;
-        case 22: 
-        oCountDownPeriod.innerHTML = '22:00';     
-        break;
+        oMinute.innerHTML = Math.abs(oM-59);
+        oSeconds.innerHTML = Math.abs(oS-59); 
+         
+    if(oH % 2 != 0){    
+        oCountDownPeriod.innerHTML = oH-1 + ': 00';
+        oHour.innerHTML = '00';
+    }else if(oH % 2 == 0){
+        oCountDownPeriod.innerHTML = oH + ': 00';
+        oHour.innerHTML = '01';
     }
-     setInterval(function(){
+    if(parseInt(oCountDownPeriod.innerHTML) < 10){
+        oCountDownPeriod.innerHTML = '0' + oCountDownPeriod.innerHTML;
+    }
+
         oSeconds.innerHTML -= 1; 
-        oMinute.innerHTML = 60-oM;
-        if(oSeconds.innerHTML == 0){
-            oSeconds.innerHTML = 60;
-            oMinute.innerHTML -= 1;
-            if(oMinute.innerHTML == 0){
-                oHour -= 1;
-            }
+        if(oCountDownPeriod.innerHTML < 10){
+            oCountDownPeriod.innerHTML = "0" + oCountDownPeriod.innerHTML;
+        }       
+        if(oSeconds.innerHTML < 10){
+            oSeconds.innerHTML = "0" + oSeconds.innerHTML;
         }
-     }, 1000)
+        if (oMinute.innerHTML < 10){
+            oMinute.innerHTML = "0" + oMinute.innerHTML;
+        }
+        if(oSeconds.innerHTML == 0){
+            oMinute.innerHTML -= 1;
+            oSeconds.innerHTML = 59;
+        }
+    }
+  setInterval(countDown, 1000);
+    countDown();
 
 
 

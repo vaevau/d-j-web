@@ -386,19 +386,13 @@ html {
      }
 }
 .header-l {
-    .jd-logo { 
-        
-    }
-    .jd-logo:hover .ad-pic{ 
-        display: block;
-    }
     .jd-logo h2 .jd-title-lk {
         display: block;
         width: 19rem;
         height: 0rem;
         padding-top: 12rem;
         background: url(../img/bg/jd-logo.png) no-repeat
-    0 2.6rem/19rem 12rem;
+    0 2.6rem/20rem 12rem;
         overflow: hidden;
         margin-top: -3rem;
         z-index: 12;
@@ -408,20 +402,28 @@ html {
     .ad-pic{
         position: absolute;
         left: 5.4rem;
-        top: 5rem;
-        display: none;        
+        top: 5rem;         
+        z-index: 14;  
+        cursor: pointer;
+        opacity: 0;
+        filter: alpha(opacity = 0);   
     }
-    .ad-pic::after {
-        content: "";
+    .jd-logo:hover .ad-pic{ 
+        opacity: 1;
+        filter: alpha(opacity = 100); 
+    }
+    .jd-logo:hover .dynamic-ad-bg {
+       display: block;
+    }
+    .dynamic-ad-bg {        
         width: 19rem;
         height: 12rem;
-        display: block;
         background: url(../img/bg/ad-logo.gif) no-repeat
         0 0/19rem 12rem;
         position: absolute;
-        left: -5rem;
-        top: -5rem;
-        z-index: 1;
+        left: 0rem;
+        top: 0rem;
+        z-index: 13;
         display: none;
     }
     .goto-txt {
@@ -429,7 +431,7 @@ html {
         color:rgb(155, 120, 83); 
         width: 10rem; 
         min-width: 10rem;
-        margin-left: -1rem;
+        margin-top: -1rem;
     }
     .goto {
         text-align: center;
@@ -437,11 +439,10 @@ html {
         padding: .2rem .4rem;
         border-radius: .6rem;
         background-color: aquamarine;
-   
+        margin-top: 1rem;
     }
    .goto a {
         color: #fff;
-        font-size: 1.2rem;
     }
 }
 
@@ -614,6 +615,33 @@ html {
         font-size: 1.5rem;
     }  
  }
+
+.search-fix-speedy {
+    width: 100%;
+    height: 5rem;
+    line-height: 5rem;
+    border-bottom: 2px solid #ee3333;
+    position: fixed;
+    top: 0rem;
+    overflow: hidden;
+    z-index: 104;
+    background-color: #fff;
+    .header-container {
+        justify-content: space-between;
+        width: 100rem;
+        height: 5rem;        
+        left: 50%;
+        transform: translate(-50%, -50%);
+        margin:  auto;
+    }
+    .header-l {
+        margin-left: -8.4rem;
+    }
+    .jd-logo h2 .jd-title-lk { 
+        background: url(../img/bg/jd-logo.png) no-repeat
+    0 -9.6rem/18rem 14rem;
+    }
+}
 
 
     //主要内容
@@ -1298,6 +1326,7 @@ html {
 }
 
 
+// 商品秒杀块
 .low-price-block {
     margin: 2rem auto;   
     background-color: #fefefe;
@@ -1312,6 +1341,7 @@ html {
         text-align: center;
         font-family: 'Microsoft YaHei','Heiti SC',tahoma,arial,'Hiragino Sans GB',"\5B8B\4F53",sans-serif;       
     }
+  
     .countdown-l .countdown {
         position: relative;
         top: 10rem;
@@ -1335,11 +1365,12 @@ html {
         margin-top: 1rem;        
     }
     .countdown-l .cuntdwn-div span:nth-child(odd) {
-        width: 3rem;
+        width: 3.4rem;
         height: 3rem;
         line-height: 3rem;
         background-color: #000;
         display: inline-block;
+        text-align: center;
         padding: .2rem; 
     }
 
@@ -2193,7 +2224,6 @@ ins {
 }
 
 // 排行榜
-
 .rank-top {
     .box-nav {
         width: 92%;
@@ -2595,6 +2625,7 @@ ins {
         border-image: -moz-linear-gradient(to bottom,#fff,
         rgb(226, 225, 225) #fff);     
     }
+
     li:last-child {
         border: none;
     }

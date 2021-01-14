@@ -32,7 +32,6 @@
         </div>      
     </nav> 
 
-
     <!-- 隐藏内容 -->
     <div class="nav-ls-hide">
         <div id="J_nav_ls" class="nav-ls-container dsply-flex">           
@@ -274,6 +273,41 @@
             </div>  
         </div>
     </div>
+    <div class="search-fix-speedy">
+        <div class="header-container">
+            <div class="header-l">
+                <div class="jd-logo">                
+                    <h2>            
+                        <a href="#" class="jd-title-lk">京东，多快好省</a>
+                    </h2>   
+                </div>
+            </div>
+            
+            <div class="header-m">
+                <div class="search">
+                    <div class="srh-ipt">
+                        <input type="text"  class="input" placeholder="芭比娃娃" />
+                        <span class="fa fa-camera" aria-hidden="true"></span>
+                        <button class="fa fa-search" aria-hidden="true" id="J_srh_btn"></button>
+                        <div class="search-helper" id="J_search_helper">
+                            <ul>
+                                <li><a href="#">无线键盘</a><span>搜索历史</span></li>
+                                <li><a href="#">芭比娃娃</a><span>搜索历史</span></li>
+                                <li><a href="#">无线键盘</a><span>搜索历史</span></li>
+                                <li><a href="#">芭比娃娃</a><span>搜索历史</span></li>
+                            </ul>
+                            <a href="#" class="del-all" id="J_delete_all">全部删除</a>
+                        </div>
+                    </div>
+                    <div class="shopping-car">                        
+                        <span class="fa fa-shopping-cart"></span>
+                        <span class="counts">0</span>
+                        <p>我的购物车</p>
+                    </div>                  
+                </div>            
+            </div>
+        </div>
+    </div>
         
 
         <!-- header部分 -->
@@ -286,10 +320,11 @@
                 <h2>
                     <a href="#" class="jd-title-lk">京东，多快好省</a>
                 </h2> 
-                <div class="ad-pic">   
+                <div class="ad-pic hover-opacity">   
                     <p class="goto-txt">爱家焕然一新</p>
                     <div class="goto"><a href="#">去看看 ></a> </div>   
-                </div>                     
+                </div>  
+                <div class="dynamic-ad-bg"></div>  
             </div>
         </div>
         
@@ -318,7 +353,7 @@
                     <div class="show-code"></div>
                     <div class="code-li"></div>
                 </div>
-            </div>
+            </div>            
             <div class="rcm-lk">
                 <ul>
                     <li><a href="#" class="active">工业年末庆</a></li>
@@ -3896,7 +3931,7 @@
         </div>  
 
             <!--  商品秒杀块 -->
-        <div class="low-price-block">
+        <div class="low-price-block" id="jump_to_secondskill">
             <div class="countdown-l">
                 <h1>京东秒杀</h1>                               
                 <div class="countdown">
@@ -3906,9 +3941,8 @@
                         <span>:</span>
                         <span class="minute" id="J_mitnute">57</span>
                         <span>:</span>
-                        <span class="seconds" id="J_seconds">50</span>
-                    </div>
-                   
+                        <span class="seconds" id="J_seconds">59</span>
+                    </div>                   
                 </div>
             </div>
             <div class="goods-show-m">
@@ -6174,7 +6208,7 @@
     <!-- 侧边栏菜单 -->
     <ins class="sidebar">
         <ul>
-            <li><a href="#">京东秒杀</a></li>
+            <li><a href="#jump_to_secondskill">京东秒杀</a></li>
             <li><a href="#">特色优选</a></li>
             <li><a href="#">频道广场</a></li>
             <li><a href="#">为你推荐</a></li>
