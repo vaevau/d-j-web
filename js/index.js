@@ -125,6 +125,9 @@
         //新品首发
         oPrvBtnGoods.addEventListener('click', prevCardImg);
         oNextBtnGoods.addEventListener('click', nextCardImg);
+
+        //滚动条相关
+        doc.addEventListener('scroll', scrollEvent);
     }
 
     // 事件委托
@@ -588,7 +591,7 @@
         oM = oDate.getMinutes(),
         oS = oDate.getSeconds();
         oMinute.innerHTML = Math.abs(oM-59);
-        oSeconds.innerHTML = Math.abs(oS-59); 
+        oSeconds.innerHTML = Math.abs(60-oS); 
          
     if(oH % 2 != 0){    
         oCountDownPeriod.innerHTML = oH-1 + ': 00';
@@ -620,7 +623,26 @@
     countDown();
 
 
+    var oSearchFixed = doc.getElementById('J_search_fixed_top'),
+        oTheSideMenu = doc.getElementById('J_menu_side');
+    //滚动条相关事件
+    var scrollTop = 0;
+    function scrollEvent(){
+        if(doc.documentElement && doc.documentElement.scrollTop){
+            scrollTop =  doc.documentElement.scrollTop;
+        }
+       if(scrollTop >= 560){
+        moveMent(oSearchFixed, 'top', 0, 10000,function(){
+            addClass(oTheSideMenu, 'elevator-list');
+        })
+       }else if(scrollTop < 560){
+        moveMent(oSearchFixed, 'top', -5, 10000,function(){
+            rmClass(oTheSideMenu, 'elevator-list');
+        })
+       }
+    }
 
+    
     doc.onselectstart = function(){
         return false;
     }

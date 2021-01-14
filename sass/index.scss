@@ -622,7 +622,7 @@ html {
     line-height: 5rem;
     border-bottom: 2px solid #ee3333;
     position: fixed;
-    top: 0rem;
+    top: -5rem;
     overflow: hidden;
     z-index: 104;
     background-color: #fff;
@@ -1365,13 +1365,12 @@ html {
         margin-top: 1rem;        
     }
     .countdown-l .cuntdwn-div span:nth-child(odd) {
-        width: 3.4rem;
         height: 3rem;
-        line-height: 3rem;
+        line-height: 3.4rem;
         background-color: #000;
         display: inline-block;
         text-align: center;
-        padding: .2rem; 
+        padding: 0 .4rem; 
     }
 
     .goods-show-m {
@@ -1538,13 +1537,21 @@ html {
 
 //侧边栏菜单
 ins {
-    width: 5.8rem;
-    position: absolute;
-    text-decoration: none;
-    right: 5%;
-    top: 112%;
+    width: 5.8rem;    
+    text-decoration: none;   
     text-align: center;
-    background-color: #fff;
+    
+    ul {
+        position: absolute;
+        right: 7rem;
+        top: 68.2rem;
+        background-color: #fff;
+    }
+   .elevator-list{
+        position: fixed;
+        top: 8rem;
+        right: 7rem;   
+    }
     li {
         width: 5.8rem;
         height: 6rem;
