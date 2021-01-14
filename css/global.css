@@ -61,12 +61,12 @@ a:hover {
     position: absolute; 
 }
 /* hover图片透明度 */
-img {
-    /* transition: all .3s ease-in-out;
+ img {
+     transition: all .3s ease-in-out;
     -webkit-transition: all .3s ease-in-out;
     -moz-transition: all .3s ease-in-out;
     -o-transition:all .3s ease-in-out; */
-}
+} 
 .hover-opacity {
     transition: all .3s ease-in-out;
     -webkit-transition: all .3s ease-in-out;

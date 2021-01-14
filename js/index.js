@@ -391,7 +391,7 @@
             moveMent(oBannerImg, 'left', -58*index, 20000, function(){
                 dotStyle();
             })
-        }, 5000);  
+        }, 4000);  
     }
     autoSwitchImg();
 
@@ -624,7 +624,9 @@
 
 
     var oSearchFixed = doc.getElementById('J_search_fixed_top'),
-        oTheSideMenu = doc.getElementById('J_menu_side');
+        oTheSideMenu = doc.getElementById('J_menu_side'),
+        aElvItem = oTheSideMenu.getElementsByClassName('elv_item');
+        
     //滚动条相关事件
     var scrollTop = 0;
     function scrollEvent(){
@@ -641,8 +643,37 @@
         })
        }
     }
+ 
+    //侧边直达按钮                  
+    // oElv_01.onclick = function(item){       
+    //    doc.documentElement.scrollTo({
+    //        top:item,
+    //        behavior: 'smooth'
+    //    });   
+    // }
+    // oBackToTop.onclick = function(){
+    //     doc.documentElement.scrollTo({
+    //         top:0,
+    //         behavior: 'smooth'
+    //     })
+    // }
+    // oElv_04.onclick = function(){
+    //     doc.documentElement.scrollTo({
+    //         top: 2700,
+    //         behavior: 'smooth'
+    //     })
+    // } //简化为以下
 
-    
+    var topDisArr = [540,900,1800,2700,0];
+    topDisArr.forEach((item,index) => {
+        aElvItem[index].onclick = function(){            
+            doc.documentElement.scrollTo({
+                top:item,
+                behavior: 'smooth'
+            }); 
+        }
+    })
+
     doc.onselectstart = function(){
         return false;
     }
