@@ -14,7 +14,8 @@
     //搜索框相关　
     var inputVal = ['芭比娃娃','哇哈哈','机械键盘','内裤','电脑免费租','格力变频空调','办公椅','500G硬盘'],
         lkTxtVal = ['超市购好物','家电超级五','苹果免息购','工业年末庆'],
-        oIptVal = doc.querySelector('.srh-ipt .input'),
+        oSrhIput = doc.getElementById('J_srh_ipt'),
+        oIptVal = oSrhIput.querySelector('.input'),
         oLkTxtVal = doc.querySelector('.rcm-lk .active'),
         oSrhHelp = doc.getElementById('J_search_helper'),
         oSrhHpUl = doc.querySelector('#J_search_helper ul'),      
@@ -207,7 +208,7 @@
              return this[Math.floor(Math.random()*this.length)];         
      }
      
-    var timer_1 =  setInterval(setIpuVal, 9000),
+    var timer_1 =  setInterval(setIpuVal, 7000),
         timer_2 = setInterval(setLkVal, 4000);
      function setIpuVal(){
         var iptEle = inputVal.randomEle();
@@ -227,7 +228,7 @@
      function recoverEvent(){       
         inputVal.forEach((item) =>{
             if(oIptVal.value === item){
-               timer_1 = setInterval(setIpuVal, 9000);
+               timer_1 = setInterval(setIpuVal, 7000);
             }
         }) 
      }
