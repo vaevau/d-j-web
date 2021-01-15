@@ -1,0 +1,144 @@
+html {
+  font-size: 62.5%; }
+
+#header {
+  height: 10rem;
+  background-color: #fff; }
+  #header .web-tit {
+    width: 100%;
+    padding: 0 4rem;
+    height: 10rem;
+    line-height: 6rem;
+    box-shadow: 0 0.4rem 0.2rem #e9e9e9;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end; }
+
+.jd-logo h2 .jd-title-lk {
+  display: block;
+  width: 26rem;
+  height: 0rem;
+  padding-top: 20rem;
+  background: url(../img/bg/jd-logo.png) no-repeat -2rem -18.6rem/cover;
+  background-size: 120% 120%;
+  overflow: hidden;
+  margin-top: -3rem;
+  z-index: 12;
+  position: absolute;
+  top: 6rem; }
+.jd-logo strong {
+  font-weight: normal;
+  margin-left: 19rem;
+  font-size: 2.6rem;
+  font-family: 'Microsoft YaHei';
+  color: #666; }
+
+.areldy-account p {
+  font-size: 1.6rem; }
+
+.areldy-account p a {
+  color: #dd4444; }
+
+.areldy-account p a:hover {
+  color: #ad0f0f;
+  text-decoration: underline; }
+
+.resign-wrap {
+  width: 50rem;
+  margin: 10rem auto;
+  text-align: center; }
+
+.account-login {
+  width: 30.4rem;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column; }
+
+.account-login div {
+  border: 1px solid #ccc;
+  width: 30.4rem;
+  height: 4rem;
+  margin-top: 2rem;
+  display: flex; }
+
+.account-login input {
+  width: 26.6rem;
+  height: 3.8rem;
+  line-height: 3.8rem;
+  padding-left: 1.4rem;
+  color: #999; }
+
+.account-login input::placeholder {
+  color: #999; }
+
+.account-login span {
+  display: inline-block;
+  width: 4rem;
+  height: 3.8rem;
+  line-height: 3.8rem;
+  background-color: #e9e9e9;
+  border-right: 1px solid #ccc; }
+
+.account-login span i {
+  font-size: 1.6rem;
+  color: #c2c2c2; }
+
+.account-login p {
+  text-align: right;
+  margin-top: 2rem; }
+
+.account-login button {
+  width: 30.4rem;
+  height: 3.2rem;
+  line-height: 3.2rem;
+  margin: 2rem auto 1.2rem;
+  text-align: center;
+  color: #fff;
+  background-color: #e4393c;
+  border: 1px solid #e85356;
+  cursor: pointer; }
+
+.web-agreenment {
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  z-index: 10000;
+  background-color: rgba(139, 139, 139, 0.4);
+  display: none; }
+
+.agreenment-box {
+  width: 90rem;
+  height: 58rem;
+  margin: -2rem auto;
+  background-color: #fff; }
+  .agreenment-box .agreenment-hd {
+    height: 3rem;
+    line-height: 3rem;
+    padding: 0 2rem;
+    background-color: #f3f3f3;
+    position: relative; }
+  .agreenment-box .agreenment-hd h6 {
+    font-size: 1.4rem; }
+  .agreenment-box .agreenment-hd .disagreen-btn {
+    position: absolute;
+    top: 0;
+    right: 2rem;
+    cursor: pointer; }
+  .agreenment-box .agreenent-cont {
+    text-align: center;
+    font-size: 1.6rem;
+    margin-top: 1rem; }
+  .agreenment-box .agreen-btn {
+    position: absolute;
+    width: 50rem;
+    height: 5rem;
+    line-height: 5rem;
+    margin: auto;
+    bottom: 5rem;
+    left: 40rem;
+    color: #fff;
+    background-color: #e4393c; }
+
+/*# sourceMappingURL=resign.css.map */
