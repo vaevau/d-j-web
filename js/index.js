@@ -1,3 +1,5 @@
+// const { threadId } = require("worker_threads");
+
 ;(function(doc){
     var oCurntPlace = doc.querySelector('.J_current_place'),   
         oRegionalLs = doc.querySelector('#J_nav_ls .regional-ls'),
@@ -69,11 +71,11 @@
     }
 
     function bindEvent(){  
-        //显示隐藏，tab切换相关
-        oCurntPlace.addEventListener('mouseover', show, false);
-        oCurntPlace.addEventListener('mouseout', hide, false); 
-        oRegionalLs.addEventListener('mouseover', show, false);
-        oRegionalLs.addEventListener('mouseout', hide, false); 
+    //     显示隐藏，tab切换相关
+        oCurntPlace.addEventListener('mouseover', show);
+        oCurntPlace.addEventListener('mouseout', hide); 
+        oRegionalLs.addEventListener('mouseover', show);
+        oRegionalLs.addEventListener('mouseout', hide); 
         
         for(; i<aLkLen; i++){ 
             aNavLk[i].idx = i;        
@@ -156,6 +158,41 @@
     //     if(eTget.nodeName == 'LI' || eTget.nodeName == 'A'){
     //         rmClass(aCateLs[eTget.idx], 'show');
     //     }          
+    // }
+    
+    // function Tab(opt){
+    //     this.obj = opt.obj;
+    //     this.show = opt.show;
+    //     this.hide = opt.hide;
+    // }
+    // var tab1 = new Tab({
+    //     obj: oCurntPlace,
+    //     show: function(){           
+    //         h = s = 1;
+    //         addClass(oRegionalLs,'show');
+    //         addClass(oCurntPlace,'active-bg');          
+    //     },
+    //     hide: function(){            
+    //             h = s = 0;                
+    //             setTimeout(function(){
+    //                 if(h !==1 || s !== 1){
+    //                     rmClass(oRegionalLs, 'show');
+    //                     rmClass(oCurntPlace, 'active-bg');
+    //                 }
+    //             },100)            
+    //     }
+    // })
+    // oCurntPlace.onmouseover = function(){
+    //     tab1.show();
+    // }
+    // oCurntPlace.onmouseout = function(){
+    //     tab1.hide();
+    // }
+    // oRegionalLs.onmouseover = function(){
+    //     tab1.show();
+    // }
+    // oRegionalLs.onmouseout = function(){
+    //     tab1.hide();
     // }
 
     function show(){   
