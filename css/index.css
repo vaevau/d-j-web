@@ -518,7 +518,7 @@ html {
   height: 2.5rem;
   line-height: 2.5rem;
   padding: 0rem 1rem; }
-.main-l .cate-lk li:hover {
+.main-l .active-bg {
   background: #e0dfdf; }
 .main-l a {
   color: #636363;

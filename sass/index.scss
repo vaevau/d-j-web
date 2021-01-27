@@ -377,7 +377,7 @@ html {
 }   
 .header-container {
     width: 100rem;
-    position: relative;
+    position: relative;  
     .header-l {
         width: 14%;
     }
@@ -678,7 +678,7 @@ html {
         line-height: 2.5rem;
         padding: 0rem 1rem;
     }
-    .cate-lk li:hover {
+    .active-bg{
         background: #e0dfdf;
     }   
    a {

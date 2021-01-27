@@ -64,8 +64,6 @@
         oMinute = doc.getElementById('J_mitnute'),
         oSeconds = doc.getElementById('J_seconds');
 
-
-
     var init = function(){
         bindEvent();        
     }
